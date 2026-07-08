@@ -1,19 +1,18 @@
 NAME = megaphone
 
-SOURCES = megaphone.cpp\
-
+SOURCES = megaphone.cpp
 
 OBJECTS = $(SOURCES:.c=.o)
 
 CC = c++
 
-C++FLAGS = -Wall -Werror -Wextra -std=c++98
+FLAGS = -Wall -Werror -Wextra -std=c++98
 
 %.o: %.c
-	$(CC) $(C++FLAGS) -c $< -o $@
+	$(CC) $(FLAGS) -c $< -o $@
 
 $(NAME): $(OBJECTS)
-		$(CC) $(C++FLAGS) -o $@ $(OBJECTS)
+		$(CC) $(FLAGS) -o $@ $(OBJECTS)
 
 all: $(NAME)
 
@@ -24,6 +23,5 @@ fclean: clean
 		rm -f $(NAME)
 
 re: fclean all
-
 
 .PHONY: all clean fclean re
