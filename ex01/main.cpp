@@ -6,7 +6,7 @@
 /*   By: fda-roch <<fda-roch@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/09 15:45:36 by fda-roch          #+#    #+#             */
-/*   Updated: 2026/07/09 20:47:40 by fda-roch         ###   ########.fr       */
+/*   Updated: 2026/07/09 20:50:27 by fda-roch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,7 @@ int	main(void)
 		}
 		else
 		{
+			// says it is ignored, so maybe shouldn´t write anything...just still asking for an input...
 			std::cout << "Wrong input, please try again" << std::endl;
 			std::cout << "Write one of these options: ADD, SEARCH or EXIT: ";
 			std::cin >> input;
