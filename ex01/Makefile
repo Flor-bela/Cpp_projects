@@ -3,21 +3,21 @@ NAME = phonebook
 SOURCES = \
 		PhoneBook.cpp\
 		Contact.cpp\
-		main.cpp\
+		main.cpp
 
-OBJECTS = $(SOURCES:.c = .o)
+OBJECTS = $(SOURCES:.cpp=.o)
 
-CC = c++
+CXX = c++
 
-FLAGS = -Wall -Werror -Wextra -std=c++98
+CXXFLAGS = -Wall -Werror -Wextra -std=c++98
  
-%.o: %.c
-	$(CC) $(FLAGS) -c $< -o $@
+all: $(NAME)
+
+%.o: %.cpp
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 $(NAME): $(OBJECTS)
-		$(CC) $(FLAGS) -o $@ $(OBJECTS)
-
-all: $(NAME)
+		$(CXX) $(CXXFLAGS) -o $@ $(OBJECTS)
 
 clean:
 	rm -f $(OBJECTS)

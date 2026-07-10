@@ -2,19 +2,19 @@ NAME = megaphone
 
 SOURCES = megaphone.cpp
 
-OBJECTS = $(SOURCES:.c=.o)
+OBJECTS = $(SOURCES:.cpp=.o)
 
-CC = c++
+CXX = c++
 
-FLAGS = -Wall -Werror -Wextra -std=c++98
-
-%.o: %.c
-	$(CC) $(FLAGS) -c $< -o $@
-
-$(NAME): $(OBJECTS)
-		$(CC) $(FLAGS) -o $@ $(OBJECTS)
+CXXFLAGS = -Wall -Werror -Wextra -std=c++98
 
 all: $(NAME)
+
+%.o: %.cpp
+	$(CXX) $(CXXFLAGS) -c $< -o $@
+
+$(NAME): $(OBJECTS)
+		$(CXX) $(CXXFLAGS) -o $@ $(OBJECTS)
 
 clean:
 		rm -f $(OBJECTS)
