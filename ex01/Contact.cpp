@@ -23,6 +23,24 @@ std::string	Contact::get_last_name(void) const
 	return (this->last_name);
 }
 
+std::string	Contact::get_nickname(void) const
+{
+	// what if it is empty???
+	return (this->nickname);
+}
+
+std::string	Contact::get_phone_number(void) const
+{
+	// what if it is empty???
+	return (this->phone_number);
+}
+
+std::string	Contact::get_darkest_secret(void) const
+{
+	// what if it is empty???
+	return (this->darkest_secret);
+}
+
 void	Contact::set_first_name(std::string name)
 {
 	this->first_name = name;
