@@ -3,12 +3,12 @@
 
 Contact::Contact(void)
 {
-	std::cout << "Constructor from Contact called" << std::endl;
+	//std::cout << "Constructor from Contact called" << std::endl;
 }
 
 Contact::~Contact(void)
 {
-	std::cout << "Destructor from Contact called" << std::endl;
+	//std::cout << "Destructor from Contact called" << std::endl;
 }
 
 std::string	Contact::get_first_name(void) const
