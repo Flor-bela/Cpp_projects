@@ -6,7 +6,7 @@
 /*   By: fda-roch <<fda-roch@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/09 15:45:36 by fda-roch          #+#    #+#             */
-/*   Updated: 2026/07/14 19:33:40 by fda-roch         ###   ########.fr       */
+/*   Updated: 2026/07/14 21:01:40 by fda-roch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ void	print_contacts(PhoneBook *phonebook)
 {
 	Contact	contact;
 	int	i;
-	
+
 	i = 0;
 	while (i < 8)
 	{
@@ -91,10 +91,10 @@ void	print_contacts(PhoneBook *phonebook)
 		contact.set_first_name(check_contact_len(contact.get_first_name())); // it will change it??? hmm not really it is a single pointer....
 		contact.set_last_name(check_contact_len(contact.get_last_name()));
 		contact.set_nickname(check_contact_len(contact.get_nickname()));
-	
-		std::cout << "|" << std::setw(10) << i + 1 << "|" << contact.get_first_name() << "|" << contact.get_last_name() << "|" << contact.get_nickname() << "|" << std::endl;
+
+		std::cout << "|" << std::setw(10) << i << "|" << contact.get_first_name() << "|" << contact.get_last_name() << "|" << contact.get_nickname() << "|" << std::endl;
 		i++;
-	}	
+	}
 }
 
 std::string	print_prompt(void)
@@ -127,11 +127,38 @@ int	main(void)
 		else if (input == "SEARCH")
 		{
 			//std::cout << "\033[2J" << std::flush; // no funciona bien...
+			int	i;
 
+			i = 0;
 			std::cin.ignore();
-			std::cout << "|     Index" << "|" << "first name" << "|" << " last name" << "|" << "  nickname" << "|" << std::endl;
+			// Showing all contacts:
+			std::cout << "|     index" << "|" << "first name" << "|" << " last name" << "|" << "  nickname" << "|" << std::endl;
 			print_contacts(&phonebook);
-
+			
+			// And now "filtering"
+			
+			std::cout << "Type the index (0 to 7) of the contact you want to see: ";
+			
+			// si no ponen un numero da error!!!
+			// o limito que los que pongan sea siempre numeros o si no necesito coger como std::string y hacer como atoi...y converterlo a numero...
+			std::cin >> i; // esto da un bucle infinito si escribo letras!!!!!!!!!!!!
+			if (i < 0 || i > 7)
+			{
+				std::cout << "Invalid index." << std::endl;
+			}
+			else
+			{ 
+				// another function??
+				std::cout << "index: " << i << std::endl;
+				std::cout << "first name: " << phonebook.contacts[i].get_first_name() << std::endl;
+				std::cout << "last name: " << phonebook.contacts[i].get_last_name() << std::endl;
+				std::cout << "nickname: " << phonebook.contacts[i].get_nickname() << std::endl;
+			}
+			
+			
+			//ask again if you want to see another contact
+			// still need to add some sort of back -> to go back to the first prompt
+			// and check what to do if the values are empty: -> an error message
 
 			input = print_prompt();
 		}
