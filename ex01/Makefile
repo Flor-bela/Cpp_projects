@@ -3,7 +3,10 @@ NAME = phonebook
 SOURCES = \
 		PhoneBook.cpp\
 		Contact.cpp\
+		add_contact.cpp\
+		search_contact.cpp\
 		main.cpp
+
 
 OBJECTS = $(SOURCES:.cpp=.o)
 
@@ -13,7 +16,7 @@ CXXFLAGS = -Wall -Werror -Wextra -std=c++98
  
 all: $(NAME)
 
-%.o: %.cpp
+%.o: %.cpp utils.hpp PhoneBook.hpp Contact.hpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 $(NAME): $(OBJECTS)

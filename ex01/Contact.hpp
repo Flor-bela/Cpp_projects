@@ -22,7 +22,7 @@ class Contact
 		void	set_phone_number(std::string number);
 		void	set_darkest_secret(std::string secret);
 	
-	private:
+	private: // they are in private but the functions to get these variables are in public, I know from the videos that you can do this...but not 100% sure this is correct.
 		std::string	first_name;
 		std::string	last_name;
 		std::string	nickname;

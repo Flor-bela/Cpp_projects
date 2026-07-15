@@ -3,41 +3,36 @@
 
 Contact::Contact(void)
 {
-	//std::cout << "Constructor from Contact called" << std::endl;
+// should I leave these empty???
 }
 
 Contact::~Contact(void)
 {
-	//std::cout << "Destructor from Contact called" << std::endl;
+
 }
 
 std::string	Contact::get_first_name(void) const
 {
-	// what if it is empty???
 	return (this->first_name);
 }
 
 std::string	Contact::get_last_name(void) const
 {
-	// what if it is empty???
 	return (this->last_name);
 }
 
 std::string	Contact::get_nickname(void) const
 {
-	// what if it is empty???
 	return (this->nickname);
 }
 
 std::string	Contact::get_phone_number(void) const
 {
-	// what if it is empty???
 	return (this->phone_number);
 }
 
 std::string	Contact::get_darkest_secret(void) const
 {
-	// what if it is empty???
 	return (this->darkest_secret);
 }
 
