@@ -3,8 +3,8 @@ NAME = phonebook
 SOURCES = \
 		PhoneBook.cpp\
 		Contact.cpp\
-		add_contact.cpp\
-		search_contact.cpp\
+		get_input.cpp\
+		search_utils.cpp\
 		main.cpp
 
 

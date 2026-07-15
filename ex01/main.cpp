@@ -6,12 +6,13 @@
 /*   By: fda-roch <<fda-roch@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/09 15:45:36 by fda-roch          #+#    #+#             */
-/*   Updated: 2026/07/15 20:04:00 by fda-roch         ###   ########.fr       */
+/*   Updated: 2026/07/15 20:53:59 by fda-roch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.hpp"
 #include <iostream>
+#include "PhoneBook.hpp"
 
 std::string	get_command(void)
 {
@@ -33,14 +34,14 @@ int	main(void)
 	{
 		if (input == "ADD")
 		{
-			add_contact(&phonebook);
+			phonebook.add_contact();
 			input = get_command();
 		}
 		else if (input == "SEARCH")
 		{
 			print_header(); // 1st: Show all contacts
-			print_contacts(&phonebook);
-			filter_index(&phonebook); // 2nd: Filter by index
+			phonebook.print_contacts();
+			phonebook.filter_index(); // 2nd: Filter by index
 			input = get_command();
 		}
 		else
