@@ -6,7 +6,7 @@
 /*   By: fda-roch <<fda-roch@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/15 17:50:05 by fda-roch          #+#    #+#             */
-/*   Updated: 2026/07/15 19:30:07 by fda-roch         ###   ########.fr       */
+/*   Updated: 2026/07/15 20:02:32 by fda-roch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ void	add_contact(PhoneBook *phonebook)
 
 	phonebook->contacts[phonebook->current_index] = contact;
 	phonebook->current_index++;
+	phonebook->total_contacts++;
 	if (phonebook->current_index == 8)
 		phonebook->current_index = 0;
 }

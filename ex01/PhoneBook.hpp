@@ -6,7 +6,7 @@
 /*   By: fda-roch <<fda-roch@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/15 17:50:08 by fda-roch          #+#    #+#             */
-/*   Updated: 2026/07/15 17:50:09 by fda-roch         ###   ########.fr       */
+/*   Updated: 2026/07/15 20:01:19 by fda-roch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,13 @@
 class PhoneBook
 {
 	public:
-		PhoneBook(void);
-		~PhoneBook(void);
+		PhoneBook();
+		~PhoneBook();
 
+	private:
 		int	current_index;
-		Contact	contacts[8]; // así? debería estar en privado??
+		int	total_contacts;
+		Contact	contacts[8];
 };
 
 #endif
