@@ -3,7 +3,6 @@
 
 Contact::Contact(void)
 {
-// should I leave these empty???
 }
 
 Contact::~Contact(void)
@@ -38,29 +37,24 @@ std::string	Contact::get_darkest_secret(void) const
 void	Contact::set_first_name(std::string name)
 {
 	first_name = name;
-	return ;
 }
 
 void	Contact::set_last_name(std::string name)
 {
 	last_name = name;
-	return ;
 }
 
 void	Contact::set_nickname(std::string name)
 {
 	nickname = name;
-	return ;
 }
 
 void	Contact::set_phone_number(std::string number)
 {
 	phone_number = number;
-	return ;
 }
 
 void	Contact::set_darkest_secret(std::string secret)
 {
 	darkest_secret = secret;
-	return ;
 }

@@ -5,6 +5,7 @@
 
 // ADD
 std::string	get_input(std::string input);
+std::string	check_if_valid(std::string	buffer);
 
 // SEARCH
 void		print_header();

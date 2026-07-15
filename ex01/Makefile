@@ -7,8 +7,9 @@ SOURCES = \
 		search_utils.cpp\
 		main.cpp
 
+OBJECTS_DIR = obj
 
-OBJECTS = $(SOURCES:.cpp=.o)
+OBJECTS = $(SOURCES:%.cpp=$(OBJECTS_DIR)/%.o)
 
 CXX = c++
 
@@ -16,14 +17,15 @@ CXXFLAGS = -Wall -Werror -Wextra -std=c++98
  
 all: $(NAME)
 
-%.o: %.cpp utils.hpp PhoneBook.hpp Contact.hpp
-	$(CXX) $(CXXFLAGS) -c $< -o $@
+$(OBJECTS_DIR)/%.o: %.cpp PhoneBook.hpp Contact.hpp utils.hpp
+		@mkdir -p $(dir $@)
+		$(CXX) $(CXXFLAGS) -c $< -o $@
 
 $(NAME): $(OBJECTS)
 		$(CXX) $(CXXFLAGS) -o $@ $(OBJECTS)
 
 clean:
-	rm -f $(OBJECTS)
+	rm -rf $(OBJECTS_DIR)
 
 fclean: clean
 	rm -f $(NAME)

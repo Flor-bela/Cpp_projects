@@ -6,7 +6,7 @@
 /*   By: fda-roch <<fda-roch@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/09 15:45:36 by fda-roch          #+#    #+#             */
-/*   Updated: 2026/07/15 20:53:59 by fda-roch         ###   ########.fr       */
+/*   Updated: 2026/07/15 22:37:54 by fda-roch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,14 +39,14 @@ int	main(void)
 		}
 		else if (input == "SEARCH")
 		{
-			print_header(); // 1st: Show all contacts
+			print_header();
 			phonebook.print_contacts();
-			phonebook.filter_index(); // 2nd: Filter by index
+			phonebook.filter_index();
 			input = get_command();
 		}
 		else
 		{
-			std::cout << "Wrong command, please try again." << std::endl;
+			std::cout << "\033[33m" << "Wrong command, please try again." << "\033[0m" << std::endl;
 			input = get_command();
 		}
 	}

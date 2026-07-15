@@ -6,7 +6,7 @@
 /*   By: fda-roch <<fda-roch@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/15 17:50:12 by fda-roch          #+#    #+#             */
-/*   Updated: 2026/07/15 22:13:19 by fda-roch         ###   ########.fr       */
+/*   Updated: 2026/07/15 22:39:09 by fda-roch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	PhoneBook::print_contacts() const
 	int			i;
 
 	i = 0;
-	while (i < total_contacts) // to not show the empty ones
+	while (i < total_contacts)
 	{
 		firstname = check_contact_len(contacts[i].get_first_name());
 		lastname = check_contact_len(contacts[i].get_last_name());
@@ -81,10 +81,10 @@ void	PhoneBook::filter_index() const
 		if (input_search.length() == 1 && input_search[0] >='0' && input_search[0] <='7')
 		{
 			i = input_search[0] - '0';
-			if (contacts[i].get_first_name().empty()) // if they have space it should be considered empty too...and this way it is not
+			if (contacts[i].get_first_name().empty())
 			{
-				std::cout << "No contact saved at index: " << i << std::endl;
-				continue; //para volver al inicio y no continuar escribiendo abajo index, first name...
+				std::cout << "\033[33m" << "No contact saved at index: " << i << "\033[0m" << std::endl;
+				continue;
 			}
 			std::cout << "\033[31m" << "index: " << "\033[0m" << "\033[34m" << i << "\033[0m" << std::endl;
 			std::cout << "\033[31m" << "first name: " << "\033[0m" << "\033[34m" << contacts[i].get_first_name() << "\033[0m" << std::endl;
@@ -94,6 +94,7 @@ void	PhoneBook::filter_index() const
 			std::cout << "\033[31m" << "darkest secret: " << "\033[0m" << "\033[34m" << contacts[i].get_darkest_secret() << "\033[0m" << std::endl;
 		}
 		else
-			std::cout << "Invalid index." << std::endl;
+			std::cout << "\033[33m" << "Invalid index." << "\033[0m" << std::endl;
 	}
 }
+
