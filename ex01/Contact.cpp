@@ -11,50 +11,50 @@ Contact::~Contact(void)
 
 std::string	Contact::get_first_name(void) const
 {
-	return (first_name);
+	return (_first_name);
 }
 
 std::string	Contact::get_last_name(void) const
 {
-	return (last_name);
+	return (_last_name);
 }
 
 std::string	Contact::get_nickname(void) const
 {
-	return (nickname);
+	return (_nickname);
 }
 
 std::string	Contact::get_phone_number(void) const
 {
-	return (phone_number);
+	return (_phone_number);
 }
 
 std::string	Contact::get_darkest_secret(void) const
 {
-	return (darkest_secret);
+	return (_darkest_secret);
 }
 
 void	Contact::set_first_name(std::string name)
 {
-	first_name = name;
+	_first_name = name;
 }
 
 void	Contact::set_last_name(std::string name)
 {
-	last_name = name;
+	_last_name = name;
 }
 
 void	Contact::set_nickname(std::string name)
 {
-	nickname = name;
+	_nickname = name;
 }
 
 void	Contact::set_phone_number(std::string number)
 {
-	phone_number = number;
+	_phone_number = number;
 }
 
 void	Contact::set_darkest_secret(std::string secret)
 {
-	darkest_secret = secret;
+	_darkest_secret = secret;
 }

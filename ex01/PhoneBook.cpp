@@ -6,7 +6,7 @@
 /*   By: fda-roch <<fda-roch@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/15 17:50:12 by fda-roch          #+#    #+#             */
-/*   Updated: 2026/07/15 22:39:09 by fda-roch         ###   ########.fr       */
+/*   Updated: 2026/07/16 12:53:38 by fda-roch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 
 PhoneBook::PhoneBook(void)
 {
-	current_index = 0;
-	total_contacts = 0;
+	_current_index = 0;
+	_total_contacts = 0;
 }
 
 PhoneBook::~PhoneBook(void)
@@ -35,13 +35,13 @@ void	PhoneBook::add_contact()
 	contact.set_phone_number(get_input("phone number: "));
 	contact.set_darkest_secret(get_input("darkest secret: "));
 
-	contacts[current_index] = contact;
-	current_index++;
+	contacts[_current_index] = contact;
+	_current_index++;
 	
-	if (total_contacts < 8)
-		total_contacts++;
-	if (current_index == 8)
-		current_index = 0;
+	if (_total_contacts < 8)
+		_total_contacts++;
+	if (_current_index == 8)
+		_current_index = 0;
 }
 
 void	PhoneBook::print_contacts() const
@@ -52,7 +52,7 @@ void	PhoneBook::print_contacts() const
 	int			i;
 
 	i = 0;
-	while (i < total_contacts)
+	while (i < _total_contacts)
 	{
 		firstname = check_contact_len(contacts[i].get_first_name());
 		lastname = check_contact_len(contacts[i].get_last_name());
