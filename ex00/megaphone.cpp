@@ -6,7 +6,7 @@
 /*   By: fda-roch <<fda-roch@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/08 19:08:09 by fda-roch          #+#    #+#             */
-/*   Updated: 2026/07/08 19:08:10 by fda-roch         ###   ########.fr       */
+/*   Updated: 2026/07/21 11:28:53 by fda-roch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,14 @@
 
 int	main(int argc, char **argv)
 {
-	int		i;
-	int		j;
+	int	i;
+	int	j;
 
 	i = 1;
 	if (argc == 1)
 	{
 		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
-		return (0);
+		return 0;
 	}
 	while (argv[i])
 	{	
@@ -35,6 +35,6 @@ int	main(int argc, char **argv)
 		i++;
 	}
 	std::cout << std::endl;
-	return (0);
+	return 0;
 }
 

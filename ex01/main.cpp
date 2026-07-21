@@ -6,7 +6,7 @@
 /*   By: fda-roch <<fda-roch@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/09 15:45:36 by fda-roch          #+#    #+#             */
-/*   Updated: 2026/07/15 22:37:54 by fda-roch         ###   ########.fr       */
+/*   Updated: 2026/07/21 11:28:00 by fda-roch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,17 @@
 #include <iostream>
 #include "PhoneBook.hpp"
 
-std::string	get_command(void)
+std::string	get_command( void )
 {
 	std::string	input;
 	
 	std::cout << "Write one of these commands: ADD, SEARCH or EXIT: ";
 	std::getline(std::cin, input, '\n');
 
-	return (input);
+	return input;
 }
 
-int	main(void)
+int	main( void )
 {
 	PhoneBook	phonebook;
 	std::string	input;
@@ -50,5 +50,5 @@ int	main(void)
 			input = get_command();
 		}
 	}
-	return (0);
+	return 0;
 }

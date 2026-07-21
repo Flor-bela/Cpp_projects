@@ -6,7 +6,7 @@
 /*   By: fda-roch <<fda-roch@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/15 17:50:05 by fda-roch          #+#    #+#             */
-/*   Updated: 2026/07/15 22:31:01 by fda-roch         ###   ########.fr       */
+/*   Updated: 2026/07/16 16:24:09 by fda-roch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,11 @@ std::string	check_if_valid(std::string	buffer)
 	while (i < buffer.length())
 	{
 		if (!isspace(buffer[i]))
-			return(buffer);
+			return buffer;
 		i++;
 	}
 	buffer.clear();
-	return (buffer);
+	return buffer;
 }
 
 std::string	get_input(std::string input)
@@ -39,6 +39,6 @@ std::string	get_input(std::string input)
 		std::getline(std::cin, buffer, '\n');
 		buffer = check_if_valid(buffer);
 	}
-	return (buffer);
+	return buffer;
 }
 

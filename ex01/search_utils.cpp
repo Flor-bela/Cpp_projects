@@ -6,7 +6,7 @@
 /*   By: fda-roch <<fda-roch@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/15 17:50:00 by fda-roch          #+#    #+#             */
-/*   Updated: 2026/07/15 22:02:54 by fda-roch         ###   ########.fr       */
+/*   Updated: 2026/07/16 16:24:42 by fda-roch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ std::string	check_contact_len(std::string input)
 		too_long = input;
 		too_long[9] = '.';
 		too_long.resize(10);
-		return (too_long);
+		return too_long;
 	}
-	return (input);
+	return input;
 }
