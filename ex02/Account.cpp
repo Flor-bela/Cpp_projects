@@ -5,10 +5,16 @@
 
 // nb -> number
 
+// private static attributes: (we need to initiate them)
+int	Account::_nbAccounts = 0; // non-member attributes (variables)
+int	Account::_totalAmount = 0;
+int	Account::_totalNbDeposits = 0;
+int	Account::_totalNbWithdrawals = 0;
+
+
 Account::Account(int initial_deposit) // constructor (para inicializar la Account)
 {
-	// aquí solo puedo hacerlo con setters y getters porque son privadas!!! Si no no compila!!!
-	_accountIndex = Account::_nbAccounts; // y donde lo inicializo como zero?
+	_accountIndex = Account::_nbAccounts;
 	_amount = initial_deposit; // void	makeDeposit( int deposit );
 	_nbDeposits = 0;
 	_nbWithdrawals = 0;
@@ -16,7 +22,7 @@ Account::Account(int initial_deposit) // constructor (para inicializar la Accoun
 	Account::_nbAccounts++;
 	Account::_totalAmount = Account::_totalAmount + initial_deposit;
 	
-	//_totalNbDeposits and _totalNbWithdrawals is not here....I think
+	//_totalNbDeposits and _totalNbWithdrawals is not here....I think (on the setters)
 	
 	Account::_displayTimestamp();
 	std::cout << " index:" << _accountIndex << ";amount:" << initial_deposit << ";created" << std::endl;
@@ -28,13 +34,39 @@ Account::~Account() // destructor
 }
 
 
+// Getters
+int Account::getNbAccounts( void ) // static
+{
+	return Account::_nbAccounts;
+}
+
+
+int Account::getTotalAmount( void ) // static
+{
+	return Account::_totalAmount;
+}
+
+
+int Account::getNbDeposits( void ) // static -> for the total number no? I think so
+{
+	return Account::_totalNbDeposits;
+}
+
+
+int Account::getNbWithdrawals( void ) // static -> for the total number no? I think so
+{
+	return Account::_totalNbWithdrawals;
+}
 
 
 
+// static void	displayAccountsInfos( void ); 
 
 
+// Setters
 void	Account::makeDeposit(int deposit)
 {
+	// i think I will need to use here setters too, no??
 	Account::_totalAmount = Account::_totalAmount + deposit;
 	Account::_totalNbDeposits++; // (creo que tengo que hacer así porque es static) -> cada vez que se hace un deposito se aumenta
 	return ;
