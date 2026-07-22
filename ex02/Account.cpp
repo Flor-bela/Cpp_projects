@@ -15,7 +15,7 @@ int	Account::_totalNbWithdrawals = 0;
 Account::Account(int initial_deposit) // constructor (para inicializar la Account)
 {
 	_accountIndex = Account::_nbAccounts;
-	_amount = initial_deposit; // void	makeDeposit( int deposit );
+	_amount = initial_deposit;
 	_nbDeposits = 0;
 	_nbWithdrawals = 0;
 	
@@ -82,6 +82,6 @@ void	Account::_displayTimestamp( void )
 	time(&timer); // get the current time // this commes from <ctime>
 	ptm = std::localtime(&timer); ///* Return the `struct tm' representation of *TIMER in the local timezone.  */
 	std::strftime(buffer, sizeof(buffer),"[%Y%m%d_%H%M%S]", ptm); // /* Format TP into S according to FORMAT
-	std::cout << buffer << std::endl;
+	std::cout << buffer;
 	return ;
 }
