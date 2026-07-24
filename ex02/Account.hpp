@@ -1,6 +1,6 @@
 // ************************************************************************** //
 //                                                                            //
-//                Account.hpp for GlobalBanksters United                //
+//                Account.hpp for GlobalBanksters United                      //
 //                Created on  : Thu Nov 20 19:43:15 1989                      //
 //                Last update : Wed Jan 04 14:54:06 1992                      //
 //                Made by : Brad "Buddy" McLane <bm@gbu.com>                  //
@@ -23,7 +23,7 @@ public:
 
 	typedef Account		t;
 
-	// getters
+	// non-member functions (and getters)
 	static int	getNbAccounts( void ); // non-member functions: static!!! We do not need to instantiate an object to use these functions
 	static int	getTotalAmount( void );
 	static int	getNbDeposits( void );
@@ -37,7 +37,10 @@ public:
 	// setters
 	void	makeDeposit( int deposit );
 	bool	makeWithdrawal( int withdrawal ); // 3ª funcion que aparece // esta tengo que ver si tengo dinero suficiente para poder sacarlo
-	int		checkAmount( void ) const; 
+	
+	//getters
+	int		checkAmount( void ) const; // pero porque hacer esta funcion??? puedo usar la variable de _amount directamente no???
+
 	void	displayStatus( void ) const; // 2º funcion en tests.cpp : parece que es "created" or "closed"
 
 
@@ -56,7 +59,6 @@ private:
 	int				_nbWithdrawals;
 
 };
-
 
 
 // ************************************************************************** //

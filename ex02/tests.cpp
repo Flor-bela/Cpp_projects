@@ -25,7 +25,7 @@ int		main( void ) {
 	size_t const			amounts_size( sizeof(amounts) / sizeof(int) ); // 32 / 4 = 8 -> this tells us how many elements are in amounts[]
 	accounts_t				accounts( amounts, amounts + amounts_size );  // constructor receives this and prints: [19920104_091532] index:0;amount:42;created 
 	accounts_t::iterator	acc_begin	= accounts.begin();  // la primera account que sera 42 imagino
-	accounts_t::iterator	acc_end		= accounts.end(); // la ultima account que sera 16576 
+	accounts_t::iterator	acc_end		= accounts.end(); // -> (past-the-end) end es justo después de el ultimo, por eso si queremos ir hasta el final, necesitamos decir i != accounts.end()
 
 	// deposits
 	int	const			d[]			= { 5, 765, 564, 2, 87, 23, 9, 20 }; // otro array int
@@ -41,7 +41,9 @@ int		main( void ) {
 	ints_t::iterator	wit_begin	= withdrawals.begin();
 	ints_t::iterator	wit_end		= withdrawals.end();
 
+
 	Account::displayAccountsInfos(); /// funcion que tengo que hacer en Account.cpp [19920104_091532] accounts:8;total:20049;deposits:0;withdrawals:0
+	
 	std::for_each( acc_begin, acc_end, std::mem_fun_ref( &Account::displayStatus ) ); // [19920104_091532] index:0;amount:42;deposits:0;withdrawals:0 esto para cada una de las accounts
 
 	//  it es un iterador del tipo acc_int_t
@@ -56,6 +58,7 @@ int		main( void ) {
 	std::for_each( acc_begin, acc_end, std::mem_fun_ref( &Account::displayStatus ) ); // row 27 [19920104_091532] index:0;amount:47;deposits:1;withdrawals:0
 
 
+// hecho hasta aquí!!!!! 
 	for ( acc_int_t it( acc_begin, wit_begin );
 		  it.first != acc_end && it.second != wit_end;
 		  ++(it.first), ++(it.second) ) {
