@@ -37,10 +37,8 @@ public:
 	// setters
 	void	makeDeposit( int deposit );
 	bool	makeWithdrawal( int withdrawal ); // 3ª funcion que aparece // esta tengo que ver si tengo dinero suficiente para poder sacarlo
-	
 	//getters
 	int		checkAmount( void ) const; // pero porque hacer esta funcion??? puedo usar la variable de _amount directamente no???
-
 	void	displayStatus( void ) const; // 2º funcion en tests.cpp : parece que es "created" or "closed"
 
 
@@ -59,7 +57,6 @@ private:
 	int				_nbWithdrawals;
 
 };
-
 
 // ************************************************************************** //
 // vim: set ts=4 sw=4 tw=80 noexpandtab:                                      //

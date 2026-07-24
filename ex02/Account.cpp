@@ -6,6 +6,8 @@
 // nb -> number
 
 // private static attributes (non-member attributes): (we need to initiate them)
+
+// cuando se "resetean ?? nunca?"
 int	Account::_nbAccounts = 0;
 int	Account::_totalAmount = 0;
 int	Account::_totalNbDeposits = 0;
@@ -27,8 +29,12 @@ Account::Account(int initial_deposit) // constructor (para inicializar la Accoun
 }
 
 
-Account::~Account( void ) // destructor
+Account::~Account( void ) // destructor // esto actua en cada account que cierro, y como habro varias debo actualizar los datos donde tengo el numero total de cuentas abiertas
 {
+	Account::_nbAccounts--;
+	Account::_totalAmount -= _amount;
+
+
 	Account::_displayTimestamp();
 	std::cout << " index:" << _accountIndex << ";amount:" << _amount << ";closed" << std::endl;
 	// should I reset static attributes here once I leave???
