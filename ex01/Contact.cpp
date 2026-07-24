@@ -34,27 +34,32 @@ std::string	Contact::get_darkest_secret( void ) const
 	return _darkest_secret;
 }
 
-void	Contact::set_first_name(std::string name)
+void	Contact::set_first_name( std::string name )
 {
 	_first_name = name;
+	return ;
 }
 
-void	Contact::set_last_name(std::string name)
+void	Contact::set_last_name( std::string name )
 {
 	_last_name = name;
+	return ;
 }
 
-void	Contact::set_nickname(std::string name)
+void	Contact::set_nickname( std::string name )
 {
 	_nickname = name;
+	return ;
 }
 
-void	Contact::set_phone_number(std::string number)
+void	Contact::set_phone_number( std::string number )
 {
 	_phone_number = number;
+	return ;
 }
 
-void	Contact::set_darkest_secret(std::string secret)
+void	Contact::set_darkest_secret( std::string secret )
 {
 	_darkest_secret = secret;
+	return ;
 }

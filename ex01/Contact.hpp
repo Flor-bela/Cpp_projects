@@ -15,11 +15,11 @@ class Contact
 		std::string	get_phone_number( void ) const;
 		std::string	get_darkest_secret( void ) const;
 		
-		void	set_first_name(std::string name);
-		void	set_last_name(std::string name);
-		void	set_nickname(std::string name);
-		void	set_phone_number(std::string number);
-		void	set_darkest_secret(std::string secret);
+		void	set_first_name( std::string name );
+		void	set_last_name( std::string name );
+		void	set_nickname( std::string name );
+		void	set_phone_number( std::string number );
+		void	set_darkest_secret( std::string secret );
 	
 	private:
 		std::string	_first_name;

@@ -6,7 +6,7 @@
 /*   By: fda-roch <<fda-roch@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/09 15:45:36 by fda-roch          #+#    #+#             */
-/*   Updated: 2026/07/21 11:28:00 by fda-roch         ###   ########.fr       */
+/*   Updated: 2026/07/24 21:28:00 by fda-roch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,8 @@ int	main( void )
 		}
 		else
 		{
-			std::cout << "\033[33m" << "Wrong command, please try again." << "\033[0m" << std::endl;
+			std::cout << "\033[33m" << "Wrong command, please try again."
+					  << "\033[0m" << std::endl;
 			input = get_command();
 		}
 	}

@@ -6,7 +6,7 @@
 /*   By: fda-roch <<fda-roch@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/15 17:50:12 by fda-roch          #+#    #+#             */
-/*   Updated: 2026/07/16 12:53:38 by fda-roch         ###   ########.fr       */
+/*   Updated: 2026/07/24 21:28:23 by fda-roch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ PhoneBook::~PhoneBook(void)
 {
 }
 
-void	PhoneBook::add_contact()
+void	PhoneBook::add_contact( )
 {
 	Contact	contact;
 	
@@ -44,7 +44,7 @@ void	PhoneBook::add_contact()
 		_current_index = 0;
 }
 
-void	PhoneBook::print_contacts() const
+void	PhoneBook::print_contacts( ) const
 {
 	std::string	firstname;
 	std::string	lastname;
@@ -66,7 +66,7 @@ void	PhoneBook::print_contacts() const
 	}
 }
 
-void	PhoneBook::filter_index() const
+void	PhoneBook::filter_index( ) const
 {
 	std::string	input_search;
 	int	i;

@@ -6,7 +6,7 @@
 /*   By: fda-roch <<fda-roch@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/15 17:50:08 by fda-roch          #+#    #+#             */
-/*   Updated: 2026/07/16 12:51:54 by fda-roch         ###   ########.fr       */
+/*   Updated: 2026/07/24 21:29:01 by fda-roch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@
 class PhoneBook
 {
 	public:
-		PhoneBook();
-		~PhoneBook();
+		PhoneBook( );
+		~PhoneBook( );
 
-		void	add_contact();
-		void	print_contacts() const;
-		void	filter_index() const;
+		void	add_contact( );
+		void	print_contacts( ) const;
+		void	filter_index( ) const;
 
 	private:
 		int	_current_index;
