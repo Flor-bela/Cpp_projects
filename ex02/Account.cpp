@@ -1,64 +1,67 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Account.cpp                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fda-roch <<fda-roch@student.42.fr>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/07/24 20:51:38 by fda-roch          #+#    #+#             */
+/*   Updated: 2026/07/24 21:04:33 by fda-roch         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Account.hpp"
 #include <iostream>
 #include <iomanip>
-#include <ctime> // std::time_t, struct std::tm, std::localtime
+#include <ctime>
 
-// nb -> number
-
-// private static attributes (non-member attributes): (we need to initiate them)
-
-// cuando se "resetean ?? nunca?"
 int	Account::_nbAccounts = 0;
 int	Account::_totalAmount = 0;
 int	Account::_totalNbDeposits = 0;
 int	Account::_totalNbWithdrawals = 0;
 
-
-Account::Account(int initial_deposit) // constructor (para inicializar la Account)
+Account::Account( int initial_deposit )
 {
 	_accountIndex = Account::_nbAccounts;
 	_amount = initial_deposit;
 	_nbDeposits = 0;
 	_nbWithdrawals = 0;
-	
-	Account::_nbAccounts++; // aumentamos el numero de accounts que tenemos
+	Account::_nbAccounts++;
 	Account::_totalAmount = Account::_totalAmount + initial_deposit;
 	
 	Account::_displayTimestamp();
-	std::cout << " index:" << _accountIndex << ";amount:" << initial_deposit << ";created" << std::endl;
+	std::cout << " index:" << _accountIndex
+			  << ";amount:" << initial_deposit
+			  << ";created" << std::endl;
 }
 
-
-Account::~Account( void ) // destructor // esto actua en cada account que cierro, y como habro varias debo actualizar los datos donde tengo el numero total de cuentas abiertas
+Account::~Account( void )
 {
 	Account::_nbAccounts--;
 	Account::_totalAmount -= _amount;
 
-
 	Account::_displayTimestamp();
-	std::cout << " index:" << _accountIndex << ";amount:" << _amount << ";closed" << std::endl;
-	// should I reset static attributes here once I leave???
-	// or is it all reset once I just leave?
+	std::cout << " index:" << _accountIndex
+			  << ";amount:" << _amount
+			  << ";closed" << std::endl;
 }
 
-
-// Getters
-int	Account::getNbAccounts( void ) // static
+int	Account::getNbAccounts( void )
 {
-	return Account::_nbAccounts; // siendo static creo que tengo que hacer así con Account:: antes de la variable
+	return Account::_nbAccounts;
 }
 
-int	Account::getTotalAmount( void ) // static
+int	Account::getTotalAmount( void )
 {
 	return Account::_totalAmount;
 }
 
-int	Account::getNbDeposits( void ) // static -> for the total number no? I think so
+int	Account::getNbDeposits( void )
 {
 	return Account::_totalNbDeposits;
 }
 
-int	Account::getNbWithdrawals( void ) // static -> for the total number no? I think so
+int	Account::getNbWithdrawals( void )
 {
 	return Account::_totalNbWithdrawals;
 }
@@ -66,37 +69,46 @@ int	Account::getNbWithdrawals( void ) // static -> for the total number no? I th
 void	Account::displayAccountsInfos( void )
 {
 	Account::_displayTimestamp();
-	std::cout << " accounts:" << Account::_nbAccounts << ";total:" << Account::_totalAmount << ";deposits:" << Account::_totalNbDeposits << ":withdrawals:" << Account::_totalNbWithdrawals << std::endl;
+	std::cout << " accounts:" << Account::_nbAccounts
+			  << ";total:" << Account::_totalAmount
+			  << ";deposits:" << Account::_totalNbDeposits
+			  << ";withdrawals:" << Account::_totalNbWithdrawals
+			  << std::endl;
 	return ;
 }
 
-
-// Setters
-void	Account::makeDeposit(int deposit)
+void	Account::makeDeposit( int deposit )
 {
-	int	p_amount; // previous_amount;
+	int	p_amount;
 
 	p_amount = _amount;
 	_amount += deposit;
 	_nbDeposits++;
-	Account::_totalAmount += deposit; // total amount deposited?? (no estoy segura de esta)
-	Account::_totalNbDeposits++; // (creo que tengo que hacer así porque es static) -> cada vez que se hace un deposito se aumenta
+	Account::_totalAmount += deposit;
+	Account::_totalNbDeposits++;
 
 	Account::_displayTimestamp();
-	std::cout << " index:" << Account::_accountIndex << ";p_amount:" << p_amount << ";deposit:" << deposit << ";amount:" << Account::_amount << ";nb_deposits:" << _nbDeposits << std::endl;
+	std::cout << " index:" << Account::_accountIndex
+			  << ";p_amount:" << p_amount
+			  << ";deposit:" << deposit 
+			  << ";amount:" << Account::_amount
+			  << ";nb_deposits:" << _nbDeposits
+			  << std::endl;
 	return ;
 }
 
 bool	Account::makeWithdrawal( int withdrawal )
 {
-// checkAmount?? tengo que usarla aquí?
 	int	p_amount;
 
 	p_amount = _amount;
 	if (p_amount < withdrawal)
 	{
 		Account::_displayTimestamp();
-		std::cout << " index:" << Account::_accountIndex << ";p_amount:" << p_amount << ";withdrawal:" << "refused" << std::endl;
+		std::cout << " index:" << Account::_accountIndex
+				  << ";p_amount:" << p_amount
+				  << ";withdrawal:" << "refused"
+				  << std::endl;
 		return false;
 	}
 	_amount -= withdrawal;
@@ -104,36 +116,40 @@ bool	Account::makeWithdrawal( int withdrawal )
 	Account::_totalNbWithdrawals++;
 	Account::_totalAmount -= withdrawal;
 	Account::_displayTimestamp();
-	std::cout << " index:" << Account::_accountIndex << ";p_amount:" << p_amount << ";withdrawal:" << withdrawal << ";amount:" << Account::_amount << ";nb_withdrawals:" << _nbWithdrawals << std::endl;
+	std::cout << " index:" << Account::_accountIndex
+			  << ";p_amount:" << p_amount
+			  << ";withdrawal:" << withdrawal
+			  << ";amount:" << Account::_amount
+			  << ";nb_withdrawals:" << _nbWithdrawals
+			  << std::endl;
 	return true;
 }
 
-// getter 
-int		Account::checkAmount( void ) const // imagino que es para acceder a _amount ??
+int		Account::checkAmount( void ) const
 {
-	return _amount; // ?? o this->_amount??? esto solo???
-	// creo que si fuera para el static 
-	// esto es para _amount??? para quien quiera de fuera, pueda verlo??
+	return _amount;
 }
 
-// getter
 void	Account::displayStatus( void ) const
 {
 	Account::_displayTimestamp();
-	std::cout << " index:" << Account::_accountIndex << ";amount:" << Account::_amount << ";deposits:" << Account::_nbDeposits << ";withdrawals:" << Account::_nbWithdrawals << std::endl;
+	std::cout << " index:" << Account::_accountIndex
+			  << ";amount:" << Account::_amount
+			  << ";deposits:" << Account::_nbDeposits
+			  << ";withdrawals:" << Account::_nbWithdrawals
+			  << std::endl;
 	return ;
 }
 
-// private
-void	Account::_displayTimestamp( void ) // siendo private esta funcion, tengo que hacerle algo más de especial???
+void	Account::_displayTimestamp( void )
 {
-	std::time_t		timer; // __STD_TYPE __TIME_T_TYPE __time_t;	/* Seconds since the Epoch (01 January 1970).  */
-	std::tm			*ptm; // structure used to store tm_year, tm_mon, tm_hour that we obtain from std::localtime
-	char			buffer[32]; // creo que no puedo hacer esto??? 
+	std::time_t		timer;
+	std::tm			*ptm;
+	char			buffer[32];
 
-	time(&timer); // get the current time // this commes from <ctime>
-	ptm = std::localtime(&timer); ///* Return the `struct tm' representation of *TIMER in the local timezone.  */
-	std::strftime(buffer, sizeof(buffer),"[%Y%m%d_%H%M%S]", ptm); // /* Format TP into S according to FORMAT
+	time(&timer);
+	ptm = std::localtime(&timer);
+	std::strftime(buffer, sizeof(buffer),"[%Y%m%d_%H%M%S]", ptm);
 	std::cout << buffer;
 	return ;
 }
