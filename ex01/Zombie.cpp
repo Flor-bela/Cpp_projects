@@ -6,7 +6,7 @@
 /*   By: fda-roch <fda-roch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/07 16:53:09 by fda-roch          #+#    #+#             */
-/*   Updated: 2026/08/07 18:43:59 by fda-roch         ###   ########.fr       */
+/*   Updated: 2026/08/07 20:00:27 by fda-roch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 Zombie::Zombie( void ) // esto tiene que ser void para hacer el array
 {
+	//announce(); // si lo pongo aquí, aquí aún no tienen nombre, solo cuando llamo la funcion set_name en zombieHorde....pero es raro tener entonces una classe que no de nombre...
 }
 
 Zombie::~Zombie( void )

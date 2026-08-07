@@ -6,7 +6,7 @@
 /*   By: fda-roch <fda-roch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/07 17:57:11 by fda-roch          #+#    #+#             */
-/*   Updated: 2026/08/07 18:50:16 by fda-roch         ###   ########.fr       */
+/*   Updated: 2026/08/07 19:58:37 by fda-roch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ Zombie*	zombieHorde( int N, std::string name) // hmm tal vez la string tenga el 
 	for (i = 0; i < N; i++)
 	{
 		horde[i].set_name( name ); // and here name them... but how??? call the function to name them... I need to create some in Zombie class for sure...
-		//horde[i].announce( ); // maybe I need to remove announce from the constructor?? this way it 
+		//horde[i].announce( ); // maybe I need to remove announce from the constructor?? this way it (quizás no tengo que poner esto??)
 	}
 	
 	// delete only on the main file
