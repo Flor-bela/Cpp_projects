@@ -9,7 +9,7 @@ class Students
 	public:
 
 	Students( std::string login );
-		~Students( void );
+	~Students( void );
 
 	private:
 
