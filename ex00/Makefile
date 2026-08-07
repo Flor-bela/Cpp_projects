@@ -24,7 +24,7 @@ $(NAME): $(OBJS)
 		$(CXX) $(CXXFLAGS) -o $@ $(OBJS)
 
 clean:
-		rm -rf$(OBJS_DIR)
+		rm -rf $(OBJS_DIR)
 
 fclean: clean
 		rm -f $(NAME)
