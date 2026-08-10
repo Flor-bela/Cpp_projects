@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fda-roch <fda-roch@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fda-roch <<fda-roch@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/07 16:53:03 by fda-roch          #+#    #+#             */
-/*   Updated: 2026/08/07 20:00:47 by fda-roch         ###   ########.fr       */
+/*   Updated: 2026/08/10 17:30:51 by fda-roch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,16 @@
 class Zombie
 {
 	private:
-		std::string	_name; // it says it should be named "name"
+		std::string	name;
 
 	public:
-		Zombie( void ); // not sure if I can do this in this exercise...
+		Zombie( void );
 		~Zombie( void );
 
 		void	announce( void );
-		// should I put here a setter for the name??? -> no because it  wouldn´t work either....I think
-		void	set_name( std::string name);
+		void	set_name( std::string str);
 };
+
+Zombie*	zombieHorde( int N, std::string name); // should I put it here?
 
 #endif

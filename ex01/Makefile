@@ -15,13 +15,12 @@ CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 all: $(NAME)
 
-$(OBJS_DIR)/%.o: %.cpp Zombie.h Zombie.hpp
+$(OBJS_DIR)/%.o: %.cpp Zombie.hpp
 		@mkdir -p $(dir $@)
 		$(CXX) $(CXXFLAGS) -c $< -o $@
 
 $(NAME): $(OBJS)
 		$(CXX) $(CXXFLAGS) -o $@ $(OBJS)
-
 
 clean:
 		rm -rf $(OBJS_DIR)
