@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fda-roch <fda-roch@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fda-roch <<fda-roch@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/07 16:53:03 by fda-roch          #+#    #+#             */
-/*   Updated: 2026/08/07 18:16:16 by fda-roch         ###   ########.fr       */
+/*   Updated: 2026/08/10 14:08:38 by fda-roch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,17 @@
 class Zombie
 {
 	private:
-		std::string	_name; // it says it should be named "name"
+		std::string	name; // it says it should be named "name"
 
 	public:
-		Zombie( std::string name ); // not sure if I can do this in this exercise...
+		Zombie( std::string str );
 		~Zombie( void );
 
 		void	announce( void );
 };
+
+// Estas no están dentro de la classe pero las dejo en el mismo header...
+Zombie*	newZombie( std::string name );
+void	randomChump( std::string name );
 
 #endif
