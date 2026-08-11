@@ -1,4 +1,4 @@
-NAME = BRAIN
+NAME = brain
 
 SRC = main.cpp
 
