@@ -4,11 +4,16 @@ SRCS = \
 		main.cpp\
 		Weapon.cpp\
 		HumanA.cpp\
-		HumanB.cpp\
+		HumanB.cpp
 
 OBJS_DIR = objs
 
 OBJS = $(SRCS:%.cpp=$(OBJS_DIR)/%.o)
+
+HEADERS = \
+		Weapon.hpp\
+		HumanA.hpp\
+		HumanB.hpp
 
 CXX = c++
 
@@ -16,7 +21,7 @@ CXXFLAGS = -Wall -Werror -Wextra -std=c++98
 
 all: $(NAME)
 
-$(OBJS_DIR)/%.o: %.cpp Weapon.hpp HumanA.hpp HumanB.hpp
+$(OBJS_DIR)/%.o: %.cpp $(HEADERS)
 				@mkdir -p $(dir $@)
 				$(CXX) $(CXXFLAGS) -c $< -o $@
 
