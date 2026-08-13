@@ -6,7 +6,7 @@
 /*   By: fda-roch <<fda-roch@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/11 13:35:17 by fda-roch          #+#    #+#             */
-/*   Updated: 2026/08/11 23:59:45 by fda-roch         ###   ########.fr       */
+/*   Updated: 2026/08/13 18:25:01 by fda-roch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,46 +15,24 @@
 
 // forbidden: std::string::replace
 // filestreams
-int		main(int argc, char **argv) //?
+int		main(int argc, char **argv) //??? the same as in C?
 {
 	if (argc != 4)
 	{
 		std::cerr << "Wrong argument number, usage: <filename> <string1> <string2>" << std::endl;
 		return 1;
 	}
+	
 	std::ifstream	ifs(argv[1]);
 	std::string		s1 = argv[2];
 	std::string		s2 = argv[3];
 	std::string		buffer;
-	
-/* 	int	i;
-	int	j;
-	
-	i = 0;
-	j = 0; */
+	int				i = 0;
+
 	if (ifs.good())
 	{
-		//std::streambuf *pbuf = ifs.rdbuf();  //cual la diferencia entre std::streambuf y el filebuf??
-		//std::streamsize	size = pbuf->in_avail(); // cuantos characteres tiene dentro
-	
-	//	ifs.getline(buffer, size); // cannot do this??
-		//char c; ifs >> c;
-		//std::cout << "first character in file: " << c << std::endl;
-		//std::cout << size << std::endl;
-		
-		
-		/* while (pbuf)
-		{
-			//if (pbuf[i] == s1[j]) // no puedo hacer esto, son distintos tipos, no los puedo comparar
-			std::cout << pbuf << std::endl;
-			pbuf++; //se puede??? es como un puntero??
-		} */
-		/* int	i;
-
-		i = 0; */
-		size_t	pos;
-		std::string		ofs_name;
-		std::string		tmp;
+		size_t			pos;
+		std::string		ofs_name; // creating a new output file: create it only if I find s1???
 		
 		ofs_name = argv[1];
 		ofs_name.append(".replace");
@@ -62,31 +40,26 @@ int		main(int argc, char **argv) //?
 		
 		while (getline(ifs, buffer))
 		{
-			pos = buffer.find(s1);
-			std::cout << "pos is " << pos << std::endl;
-			if (pos != std::string::npos) // maybe put a limit here for std::string::npos
+			while (i < (int)buffer.length())
 			{
-				//if (s1.length() > s2.length())
-				//pos = pos + s1.length(); // para el insert??? 
-				//pos+= s1.length();
-				buffer.insert(pos, s2); // simplemente lo añade sin quitar lo que había // nah no puedo usar esta. Tengo que ver otra opcion!!!
-				std::cout << buffer << std::endl;
+				pos = buffer.find(s1);
+				if (pos != std::string::npos) // okay I find that s1 exists....
+				{
+					// tengo que hacer esto varias veces hasta que no tenga ningun s1 dentro de buffer porque pueden ser varios!
+					buffer.erase(pos, s1.length());
+					buffer.insert(pos, s2);
+				}
+				i++;
 			}
-			ofs << buffer << std::endl; // cuidado con el salto de línea!!!!!!!!!!!!
-			//buffer.clear(); // can I use this? do I need to do it? with getline it probably erases it? or increments buffer every loop? I think it substitutes it
-		// creating a new output file: create it only if I find s1??)
+			ofs << buffer << std::endl;
 		}
 		ofs.close();
+		ifs.close();
 	}
 	else
+	{
 		std::cerr << "Error reading the file" << std::endl;
-
-
-	ifs.close();
-	
-	// open filename -> copy its contents to filename.replace -> and replace s1 with s2
-	
-	
-	
+		return 1;
+	}
 	return 0;
 }
