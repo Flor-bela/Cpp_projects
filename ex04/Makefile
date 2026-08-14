@@ -1,8 +1,12 @@
 NAME = replace
 
-SRCS = main.cpp
+SRCS = \
+		ft_replace.cpp\
+		main.cpp
 
-OBJS = $(SRCS:%.cpp=%.o)
+OBJS_DIR = objs
+
+OBJS = $(SRCS:%.cpp=$(OBJS_DIR)/%.o)
 
 CXX = c++
 
@@ -10,18 +14,25 @@ CXXFLAGS = -Wall -Werror -Wextra -std=c++98
 
 all: $(NAME)
 
-%.o: %.cpp
-	$(CXX) $(CXXFLAGS) -c $< -o $@
+$(OBJS_DIR)/%.o: %.cpp replace.hpp
+				@mkdir -p $(dir $@)
+				$(CXX) $(CXXFLAGS) -c $< -o $@
 
 $(NAME): $(OBJS)
 	$(CXX) $(CXXFLAGS) $^ -o $@
 
 clean:
-	rm -f $(OBJS)
+	rm -rf $(OBJS_DIR)
 
 fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
 
-.PHONY: all clean fclean re
+tests:
+		c++ -Wall -Werror -Wextra -std=c++98 tests.cpp -o tests
+
+clean_tests:
+		rm	-f tests
+
+.PHONY: all clean fclean re tests clean_tests
