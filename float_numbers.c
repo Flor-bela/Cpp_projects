@@ -1,3 +1,5 @@
+// from: https://www.youtube.com/watch?v=f4ekifyijIg&t=3s
+
 #include <stdio.h>
 
 int	main(int argc, char **argv)
@@ -28,3 +30,5 @@ int	main(int argc, char **argv)
 	}
 	return (0);
 }
+
+// gcc float_number.c
