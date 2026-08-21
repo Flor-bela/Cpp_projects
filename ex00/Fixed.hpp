@@ -6,7 +6,7 @@
 /*   By: fda-roch <fda-roch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/21 17:26:03 by fda-roch          #+#    #+#             */
-/*   Updated: 2026/08/21 17:56:07 by fda-roch         ###   ########.fr       */
+/*   Updated: 2026/08/21 18:24:34 by fda-roch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,5 @@ class Fixed
 		static const int	_f_bits; // will always be 8 -> since it is a non-member function, need to initiate this variable before the constructor?? (something like this)
 
 };
-
-
 
 #endif
