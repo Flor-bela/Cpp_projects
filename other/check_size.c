@@ -7,9 +7,9 @@ int	main()
 	double	d = 5;
 
 
-	printf("size of i is: %lu\n", sizeof(i)); // =4
-	printf("size of f is: %lu\n", sizeof(f)); // =4
-	printf("size of d is: %lu\n", sizeof(d)); // =8
+	printf("size of i is: %lu\n", sizeof(i)); // ==4
+	printf("size of f is: %lu\n", sizeof(f)); // ==4
+	printf("size of d is: %lu\n", sizeof(d)); // ==8
 
 	return 0;
 }
