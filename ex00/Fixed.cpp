@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fda-roch <fda-roch@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fda-roch <<fda-roch@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/21 17:35:25 by fda-roch          #+#    #+#             */
-/*   Updated: 2026/08/21 18:40:45 by fda-roch         ###   ########.fr       */
+/*   Updated: 2026/08/25 16:48:29 by fda-roch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 #include <iostream>
 
-const int	Fixed::_f_bits = 8; // non-member const int
+const int	Fixed::_fractional_bits = 8; // non-member const int
 
-Fixed::Fixed( void ) : _fp(0) // default constructor
+Fixed::Fixed( void ) : _fixed_point(0) // default constructor
 {
 	std::cout << "Default constructor called" << std::endl;
 }
@@ -42,7 +42,7 @@ Fixed & Fixed::operator=(Fixed const & src) // no estoy segura de esto
 {
 	std::cout << "Copy assignment operator called" << std::endl;
 	
-	this->_fp = src.getRawBits(); // ?? lo mismo que arriba no?
+	this->_fixed_point = src.getRawBits(); // ?? lo mismo que arriba no?
 	// tenía solo this->_fp = src._fp; pero en el subject aquí escribe el output de getRawBits member function called
 
 	return *this;// 'this' es el pointer al objecto que está llamando el operador= y como es pointer y tengo que devolver &, para hacerlo tengo de hacer dereferencing(con el *) el pointer y devolver el valor "real", por eso es return *this...(lo unico nuevo)
@@ -51,12 +51,12 @@ Fixed & Fixed::operator=(Fixed const & src) // no estoy segura de esto
 int		Fixed::getRawBits( void ) const // what exactly is the raw bits??? the integer value??
 {
 	std::cout << "getRawBits member function called" << std::endl;
-	return this->_fp;  // should I just return _fp ?? (or this->_fp ??) is there a difference?
+	return this->_fixed_point;  // should I just return _fp ?? (or this->_fp ??) is there a difference?
 }
 
 void	Fixed::setRawBits( int const raw)
 {
-	_fp = raw; // just this???
+	_fixed_point = raw; // just this???
 	return ;
 }
 
