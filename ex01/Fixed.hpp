@@ -6,7 +6,7 @@
 /*   By: fda-roch <<fda-roch@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/21 17:26:03 by fda-roch          #+#    #+#             */
-/*   Updated: 2026/08/25 16:09:49 by fda-roch         ###   ########.fr       */
+/*   Updated: 2026/08/28 18:29:24 by fda-roch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ class Fixed
 		int		toInt( void ) const;			// converts the fixed-point value to a floating-point value
 		
 	private:
-		int					_fixed_point;								// initiated as a 0 in the default constructor
+		int					_rawBits;								// initiated as a 0 in the default constructor
 		static const int	_fractional_bits;			// will always be 8 -> since it is a non-member function, need to initiate this variable before the constructor?? (something like this)
 
 };

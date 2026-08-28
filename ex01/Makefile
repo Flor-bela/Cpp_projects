@@ -4,7 +4,7 @@ SRCS = \
 		Fixed.cpp\
 		main.cpp
 
-OBJS_DIR = obj
+OBJS_DIR = objs
 
 OBJS=$(SRCS:%.cpp=$(OBJS_DIR)/%.o)
 
