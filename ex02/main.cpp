@@ -6,13 +6,12 @@
 /*   By: fda-roch <<fda-roch@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/25 16:56:50 by fda-roch          #+#    #+#             */
-/*   Updated: 2026/08/26 22:55:30 by fda-roch         ###   ########.fr       */
+/*   Updated: 2026/08/28 21:08:33 by fda-roch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 #include <iostream>
-#include <limits.h>
 
 int		main( void )
 {
@@ -34,7 +33,7 @@ int		main( void )
 	std::cout << Fixed::max(b, a) << std::endl; // con el operator << podemos devolver el valor, ya que en realidad max o min devuelve una referencia del objeto entero, no devuelve el valor concreto!
 	std::cout << Fixed::min(c, e) << std::endl; */
 
-	Fixed a;
+	Fixed		a;
 	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) ); // siendo multiplicacion, pasamos todo a float y solo después hacemos multiplicacion
 	Fixed	c(2);
 
@@ -50,8 +49,8 @@ int		main( void )
 	// ejemplo de error: Fixed::max(a, b) = Fixed(5); // esto no puedo hacerlo porque b es const! No puedo cambiarlo!
 	Fixed::max(a, c) = Fixed(5); // aquí sí puedo porque ni a ni c son const, por eso puedo asignar un valor al que sea el max al final de hacer esa comparación
 	
-	Fixed error(c / 0);
+	/* Fixed error(c / 0);
 	std::cout << error << std::endl; // da un valor muy pequeño, pero no da crash....así que ni tan mal...
-
+ */
 	return 0;
 }
