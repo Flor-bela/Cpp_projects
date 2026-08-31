@@ -15,7 +15,7 @@ int		main ( void )
 	std::string	exec = "./replace";
 
 	std::cout << "--- TEST 1: Reemplazo normal (mar -> marea) ---" << std::endl;
-	std::cout << "\033[33m" << std::flush; // errores en amarillo
+	std::cout << "\033[33m" << std::flush;
 	std::system((exec + " hola.txt mar marea").c_str()); // de nuevo tengo que poner c_str() para sacer const char* porque esta versión de system (la de c++98) necesita que sea dado así
 	std::cout << "\033[0m" << std::flush;
 	std::system("cat hola.txt.replace");

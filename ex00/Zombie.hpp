@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fda-roch <<fda-roch@student.42.fr>         +#+  +:+       +#+        */
+/*   By: fda-roch <fda-roch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/07 16:53:03 by fda-roch          #+#    #+#             */
-/*   Updated: 2026/08/10 14:08:38 by fda-roch         ###   ########.fr       */
+/*   Updated: 2026/08/31 12:39:55 by fda-roch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class Zombie
 		void	announce( void );
 };
 
-// Estas no están dentro de la classe pero las dejo en el mismo header...
+
 Zombie*	newZombie( std::string name );
 void	randomChump( std::string name );
 

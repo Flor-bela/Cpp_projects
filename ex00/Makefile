@@ -6,7 +6,7 @@ SRC = \
 		randomChump.cpp\
 		main.cpp\
 
-OBJS_DIR = obj
+OBJS_DIR = objs
 
 OBJS = $(SRC:%.cpp=$(OBJS_DIR)/%.o)
 
