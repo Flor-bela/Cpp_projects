@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fda-roch <<fda-roch@student.42.fr>         +#+  +:+       +#+        */
+/*   By: fda-roch <fda-roch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/21 17:35:25 by fda-roch          #+#    #+#             */
-/*   Updated: 2026/08/28 21:23:36 by fda-roch         ###   ########.fr       */
+/*   Updated: 2026/08/31 17:01:11 by fda-roch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,26 +96,25 @@ bool	Fixed::operator!=( Fixed const & src ) const
 	return false;
 }
 
-// probar estos operators!!! -> probar con valores negativos
 Fixed	Fixed::operator+( Fixed const & src ) const
 {
 	// guardar esto en el nuevo objeto que voy a hacer return
-	return Fixed( this->getRawBits() + src.getRawBits() ); // HMMM DUDAS CON ESTO. rawBits o con Floats???
+	return Fixed( this->getRawBits() + src.getRawBits() );
 }
 
 Fixed	Fixed::operator-( Fixed const & src ) const
 {
-	return Fixed( this->getRawBits() - src.getRawBits() );  // HMMM DUDAS CON ESTO. rawBits o con Floats???
+	return Fixed( this->getRawBits() - src.getRawBits() );
 }
 
 Fixed	Fixed::operator*( Fixed const & src ) const
 {
-	return Fixed(this->toFloat() * src.toFloat()); // ??? supuestamente deberíamos evitar los floats no??
+	return Fixed(this->toFloat() * src.toFloat());
 }
 
 Fixed	Fixed::operator/( Fixed const & src ) const
 {
-	return Fixed( this->toFloat() / src.toFloat() ); // ???? supuestamente deberíamos evitar los floats no????
+	return Fixed( this->toFloat() / src.toFloat() );
 }
 
 // (pre and post)increment and (pre and post)decrement operators

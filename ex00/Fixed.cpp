@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fda-roch <<fda-roch@student.42.fr>         +#+  +:+       +#+        */
+/*   By: fda-roch <fda-roch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/21 17:35:25 by fda-roch          #+#    #+#             */
-/*   Updated: 2026/08/28 18:27:06 by fda-roch         ###   ########.fr       */
+/*   Updated: 2026/08/31 17:01:55 by fda-roch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 #include <iostream>
 
-const int	Fixed::_fractional_bits = 8; // non-member const int
+const int	Fixed::_fractional_bits = 8;
 
 Fixed::Fixed( void ) : _rawBits(0) // default constructor
 {
