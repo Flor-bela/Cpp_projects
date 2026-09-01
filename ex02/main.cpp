@@ -6,7 +6,7 @@
 /*   By: fda-roch <<fda-roch@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/25 16:56:50 by fda-roch          #+#    #+#             */
-/*   Updated: 2026/08/28 21:08:33 by fda-roch         ###   ########.fr       */
+/*   Updated: 2026/08/31 19:49:33 by fda-roch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,20 @@ int		main( void )
 	std::cout << Fixed::max( a, b ) << std::endl; // aquí el b es el que tiene más valor y con el operator << conseguimos imprimirlo
 	// ejemplo de error: Fixed::max(a, b) = Fixed(5); // esto no puedo hacerlo porque b es const! No puedo cambiarlo!
 	Fixed::max(a, c) = Fixed(5); // aquí sí puedo porque ni a ni c son const, por eso puedo asignar un valor al que sea el max al final de hacer esa comparación
-	
+		
 	/* Fixed error(c / 0);
 	std::cout << error << std::endl; // da un valor muy pequeño, pero no da crash....así que ni tan mal...
  */
+
+	Fixed aa(5);
+	Fixed bb(10.2f);
+	Fixed cc;
+
+	std::cout << "resultado es " << aa + bb << std::endl;
+	cc = aa + bb;
+	std::cout << cc.getRawBits() << std::endl;
+	std::cout << cc << std::endl;
+
+
 	return 0;
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fda-roch <fda-roch@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fda-roch <<fda-roch@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/21 17:35:25 by fda-roch          #+#    #+#             */
-/*   Updated: 2026/08/31 17:01:11 by fda-roch         ###   ########.fr       */
+/*   Updated: 2026/09/01 11:24:28 by fda-roch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <iostream>
 #include <cmath>
 
-const int	Fixed::_fractional_bits = 8; // non-member const int // fractional bits (only the decimal ones no???)
+const int	Fixed::_fractional_bits = 8;
 
 Fixed::Fixed( void ) : _rawBits(0) // default constructor
 {
@@ -98,18 +98,22 @@ bool	Fixed::operator!=( Fixed const & src ) const
 
 Fixed	Fixed::operator+( Fixed const & src ) const
 {
-	// guardar esto en el nuevo objeto que voy a hacer return
-	return Fixed( this->getRawBits() + src.getRawBits() );
+	Fixed	result; // guardar esto en el nuevo objeto que voy a hacer return
+	result.setRawBits(this->getRawBits() + src.getRawBits());
+	return result;
+		// antes estaba asignando con return Fixed(this->getRawBits() + src.getRawBits()) es un error, porque estoy dando un int a Fixed, entonces este lo va a tomar como int y va a hacer una conversion de nuevo, multiplicando por 256 para pasar de int a rawBits del fixed point....
 }
 
 Fixed	Fixed::operator-( Fixed const & src ) const
 {
-	return Fixed( this->getRawBits() - src.getRawBits() );
+	Fixed	result;
+	result.setRawBits(this->getRawBits() - src.getRawBits());
+	return result;
 }
 
 Fixed	Fixed::operator*( Fixed const & src ) const
 {
-	return Fixed(this->toFloat() * src.toFloat());
+	return Fixed(this->toFloat() * src.toFloat()); // perdemos un poco de precision al ser float, pero creo que es aceptable...
 }
 
 Fixed	Fixed::operator/( Fixed const & src ) const
@@ -123,7 +127,7 @@ Fixed	Fixed::operator/( Fixed const & src ) const
 // pre-increment (primero incrementamos y después usamos):
 Fixed &	Fixed::operator++( void ) //++a
 {
-	this->_rawBits++; // + 1 (00000001) (o sea + 1 al valor menos significativo, al primero a la derecha)
+	this->_rawBits++; // + 1 al rawBit que es el valor representable + pequeño (el epsilon) (00000001) (o sea + 1 al valor menos significativo, al primero a la derecha)
 	return *this;
 }
 
@@ -185,7 +189,7 @@ int		Fixed::getRawBits( void ) const
 	return this->_rawBits;
 }
 
-void	Fixed::setRawBits( int const raw)
+void	Fixed::setRawBits( int const raw )
 {
 	_rawBits = raw;
 	return ;
