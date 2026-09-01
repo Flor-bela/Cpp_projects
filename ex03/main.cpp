@@ -6,7 +6,7 @@
 /*   By: fda-roch <<fda-roch@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/27 19:40:11 by fda-roch          #+#    #+#             */
-/*   Updated: 2026/08/28 17:36:42 by fda-roch         ###   ########.fr       */
+/*   Updated: 2026/09/01 16:31:15 by fda-roch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int		main( void )
 	Point c(6, -1);
 	Point point(2.5f, 1.5f);
 
-	std::cout << "a" << a << std::endl; // el problema es que estoy usando floats...no estoy usando fixed_point...o mi class Fixed bien...
+	std::cout << "a" << a << std::endl;
 	std::cout << "b" << b << std::endl;
 	std::cout << "c" << c << std::endl;
 	std::cout << "point" << point << std::endl;
