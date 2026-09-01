@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Point.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fda-roch <fda-roch@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fda-roch <<fda-roch@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/27 19:16:21 by fda-roch          #+#    #+#             */
-/*   Updated: 2026/08/31 17:00:44 by fda-roch         ###   ########.fr       */
+/*   Updated: 2026/09/01 17:14:13 by fda-roch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ Point::Point( float const x_coord, float const y_coord ) : x(x_coord), y(y_coord
 {
 }
 
-Point::Point( Point const & src ) : x(src.x), y(src.y)	// copy constructor (it is a constructor, so I do not need to use return)
+Point::Point( Point const & src ) : x(src.x), y(src.y)	// copy constructor
 { 
 }
 
