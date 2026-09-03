@@ -6,7 +6,7 @@
 /*   By: fda-roch <<fda-roch@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/02 20:09:32 by fda-roch          #+#    #+#             */
-/*   Updated: 2026/09/03 17:57:07 by fda-roch         ###   ########.fr       */
+/*   Updated: 2026/09/03 18:31:12 by fda-roch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,21 +18,21 @@
 class ClapTrap
 {
 	public:
-		ClapTrap( void );							// default constructor -> with void right to be the default?? // with message
-		ClapTrap( std::string name );				// parameterized constructor es este??? constructor with name // with message
-		ClapTrap( ClapTrap const & src );			// copy constructor
-		~ClapTrap( void );							// destructor // with message
+		ClapTrap( void );
+		ClapTrap( std::string name );
+		ClapTrap( ClapTrap const & src );
+		~ClapTrap( void );
 
-		ClapTrap& operator=( ClapTrap const & src );	// operator = (asignation)
+		ClapTrap& operator=( ClapTrap const & src );
 		
-		void	attack( const std::string & target );	// when attacks -> target loses _HitPoints; (the amount based on the _AttackDamage of the attacker ) ?? ->> costs 1 _EnergyPoints;
+		void	attack( const std::string & target );
 		void	takeDamage( unsigned int amount );
-		void	beRepaired( unsigned int amount );		// regains <amount> in _HitPoints ( I guess it sums them ) ->> costs 1 _EnergyPoints;
+		void	beRepaired( unsigned int amount );
 		
 	protected: // para que ahora ScavTrap puede heredarlas
 		std::string				_Name;
-		unsigned int			_HitPoints; // health // if there are none, it cannot do anything
-		unsigned int			_EnergyPoints; // if there are none, it cannot do anything
+		unsigned int			_HitPoints;
+		unsigned int			_EnergyPoints;
 		unsigned int			_AttackDamage;
 
 };

@@ -6,7 +6,7 @@
 /*   By: fda-roch <<fda-roch@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/03 13:47:32 by fda-roch          #+#    #+#             */
-/*   Updated: 2026/09/03 18:10:36 by fda-roch         ###   ########.fr       */
+/*   Updated: 2026/09/03 18:32:03 by fda-roch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,12 +42,8 @@ ScavTrap::~ScavTrap( void )
 
 ScavTrap & ScavTrap::operator=( ScavTrap const & src )
 {
-	ClapTrap::operator=(src); // el return se ignora, o sea el ClapTrap
-	/* his->_Name = src._Name;
-	this->_HitPoints = src._HitPoints;
-	this->_EnergyPoints = src._EnergyPoints;
-	this->_AttackDamage = src._AttackDamage; */
-	return *this;
+	ClapTrap::operator=(src);	// el return del operador= de ClapTrap se ignora (no lo guardo)
+	return *this;				// y así solo devuelvo el de ScavTrap
 }
 
 void	ScavTrap::attack( const std::string & target )
@@ -66,16 +62,4 @@ void	ScavTrap::guardGate( void )
 {
 	std::cout << "ScavTrap is now in Gate keeper mode." << std::endl;
 	return ;
-}
-
-// solo para testear
-void	ScavTrap::get_HitPoints( void ) const
-{
-	std::cout << "Hitpoints: " << this->_HitPoints << std::endl;
-
-}
-
-void	ScavTrap::get_EnergyPoints( void ) const
-{
-	std::cout << "Energypoints: " << this->_EnergyPoints << std::endl;
 }
