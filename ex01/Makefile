@@ -23,14 +23,14 @@ $(OBJS_DIR)/%.o: %.cpp $(HDRS)
 			@mkdir -p $(dir $@)
 			$(CXX) $(CXXFLAGS) -c $< -o $@
 
-$(NAME): $(SRCS)
+$(NAME): $(OBJS)
 		$(CXX) $(CXXFLAGS) $^ -o $@
 
 clean:
 	rm -rf $(OBJS_DIR)
 
 fclean: clean
-	rm -r $(NAME)
+	rm -f $(NAME)
 
 re: fclean all
 
