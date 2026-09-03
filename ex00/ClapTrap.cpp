@@ -6,64 +6,72 @@
 /*   By: fda-roch <<fda-roch@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/02 20:09:24 by fda-roch          #+#    #+#             */
-/*   Updated: 2026/09/02 21:01:24 by fda-roch         ###   ########.fr       */
+/*   Updated: 2026/09/03 12:33:52 by fda-roch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 #include <iostream>
 
-ClapTrap::ClapTrap( void ) // ?? este tengo que crearlo?
+ClapTrap::ClapTrap( void ) : _Name("Default"), _HitPoints(10), _EnergyPoints(10), _AttackDamage(0)
 {
+	std::cout << "Default constructor called for " << this->_Name << std::endl;
 }
 
-ClapTrap::ClapTrap( std::string name ) : _Name(name), _HitPoints(10), _EnergyPoints(10), _AttackDamage(0) // puedo ponerlo en dos lineas??
+ClapTrap::ClapTrap( std::string name ) : _Name(name), _HitPoints(10), _EnergyPoints(10), _AttackDamage(0)
 {
+	std::cout << "Parameterized constructor called for " << this->_Name << std::endl;
 }
 
-ClapTrap::ClapTrap( ClapTrap const & src )
+ClapTrap::ClapTrap( ClapTrap const & src ) : _Name(src._Name),  _HitPoints(src._HitPoints), _EnergyPoints(src._EnergyPoints), _AttackDamage(src._AttackDamage)
 {
-	this->operator=(src); // ?? así puedo?
+	std::cout << "Copy constructor called for " << this->_Name << std::endl;
 }
 ClapTrap::~ClapTrap( void )
 {
+	std::cout << "Destructor called for " << this->_Name << std::endl;
 }
 
-ClapTrap &	ClapTrap::operator=( ClapTrap const & src ) //?
+ClapTrap &	ClapTrap::operator=( ClapTrap const & src )
 {
-	this->_Name = src._Name;		// porqué este = tiene otro color?
+	this->_Name = src._Name;
 	this->_HitPoints = src._HitPoints;
 	this->_EnergyPoints = src._EnergyPoints;
 	this->_AttackDamage = src._AttackDamage;
 	return *this;
 }
 
-void	ClapTrap::attack( const std::string & target ) // ??????????????????
+void	ClapTrap::attack( const std::string & target )
 {
-	// si el target tiene puntos debería perderlos....
-	// uy pero target es string........tiene que ser consigo mismo...con el ClapTrap que está siendo llamado...
-	if (_EnergyPoints > 0)
+	if (_EnergyPoints > 0 && _HitPoints > 0)
 	{
-		// then attack
-
-		_EnergyPoints--; // needs to use one EnergyPoint to attack
+		std::cout << "ClapTrap " << this->_Name << " attacks " << target << ", causing " << this->_AttackDamage << " points of damage!" << std::endl;
+		_EnergyPoints--;
 	}
+	else
+		std::cout << "ClapTrap " << this->_Name << " cannot attack: no energy or no hit points left!" << std::endl;
 	return ;
 }
 
 void	ClapTrap::takeDamage( unsigned int amount )
 {
-	// do I lose _HitPoints too??
-	this->_AttackDamage = this->_AttackDamage + amount; // ???
+	if (amount <= _HitPoints)
+		this->_HitPoints = this->_HitPoints - amount;
+	else
+		this->_HitPoints = 0;
+	std::cout << "ClapTrap " << this->_Name << " takes " << amount << " points of damage! Hit points remaining: " << this->_HitPoints << std::endl;
 	return ;
 }
 
 void	ClapTrap::beRepaired( unsigned int amount )
 {
-	if (_EnergyPoints > 0)
+	if (_EnergyPoints > 0 && _HitPoints > 0)
 	{
 		this->_HitPoints = this->_HitPoints + amount;
-		_EnergyPoints--;
+		this->_EnergyPoints--;
+		std::cout << "ClapTrap " << this->_Name << " repairs itself, recovering " << amount << " hit points! Current health: " << this->_HitPoints << std::endl;
 	}
+	else
+		std::cout << "ClapTrap " << this->_Name << " cannot repair itself: no energy or no hit points left!" << std::endl;
 	return ;
 }
