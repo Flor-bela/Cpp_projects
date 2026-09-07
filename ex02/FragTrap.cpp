@@ -6,14 +6,14 @@
 /*   By: fda-roch <<fda-roch@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/03 18:36:43 by fda-roch          #+#    #+#             */
-/*   Updated: 2026/09/03 20:19:18 by fda-roch         ###   ########.fr       */
+/*   Updated: 2026/09/07 13:25:29 by fda-roch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap( void ) :  ClapTrap()
+FragTrap::FragTrap( void ) : ClapTrap()
 {
 	this->_HitPoints = 100;
 	this->_EnergyPoints = 100;
