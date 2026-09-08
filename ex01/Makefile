@@ -11,7 +11,7 @@ HDRS = \
 
 OBJS_DIR = objs
 
-OBJS = $(SRC:%.cpp=$(OBJS_DIR)/%.o)
+OBJS = $(SRCS:%.cpp=$(OBJS_DIR)/%.o)
 
 CXX = c++
 
