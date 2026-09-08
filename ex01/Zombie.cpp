@@ -3,23 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fda-roch <<fda-roch@student.42.fr>         +#+  +:+       +#+        */
+/*   By: fda-roch <fda-roch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/07 16:53:09 by fda-roch          #+#    #+#             */
-/*   Updated: 2026/08/10 17:32:57 by fda-roch         ###   ########.fr       */
+/*   Updated: 2026/08/31 13:32:07 by fda-roch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 #include <iostream>
 
-Zombie::Zombie( void ) // esto tiene que ser void para hacer el array
+Zombie::Zombie( void )
 {
 }
 
 Zombie::~Zombie( void )
 {
-	std::cout << this->name << " was destroyed" << std::endl; // not sure if I should do this in this exercise
+	std::cout << this->name << " was destroyed" << std::endl;
 }
 
 void	Zombie::announce( void )

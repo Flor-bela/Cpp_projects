@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fda-roch <<fda-roch@student.42.fr>         +#+  +:+       +#+        */
+/*   By: fda-roch <fda-roch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/07 16:53:03 by fda-roch          #+#    #+#             */
-/*   Updated: 2026/08/10 17:30:51 by fda-roch         ###   ########.fr       */
+/*   Updated: 2026/08/31 13:32:14 by fda-roch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,6 @@ class Zombie
 		void	set_name( std::string str);
 };
 
-Zombie*	zombieHorde( int N, std::string name); // should I put it here?
+Zombie*	zombieHorde( int N, std::string name);
 
 #endif

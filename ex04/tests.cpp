@@ -4,7 +4,7 @@
 
 int		main ( void )
 {
-	// Crear el archivo
+
 	std::ofstream	ofs("hola.txt");
 	ofs << "mar y mar" << std::endl;
 	ofs << "una línea normal" << std::endl;
@@ -16,7 +16,7 @@ int		main ( void )
 
 	std::cout << "--- TEST 1: Reemplazo normal (mar -> marea) ---" << std::endl;
 	std::cout << "\033[33m" << std::flush;
-	std::system((exec + " hola.txt mar marea").c_str()); // de nuevo tengo que poner c_str() para sacer const char* porque esta versión de system (la de c++98) necesita que sea dado así
+	std::system((exec + " hola.txt mar marea").c_str());
 	std::cout << "\033[0m" << std::flush;
 	std::system("cat hola.txt.replace");
 	std::cout << std::endl;
@@ -65,7 +65,7 @@ int		main ( void )
 	std::cout << std::endl;
 	std::system("chmod 777 hola.txt");
 
-	// delete files!
+	
 	std::system("rm hola.txt");
 	std::system("rm hola.txt.replace");
 

@@ -6,7 +6,7 @@
 /*   By: fda-roch <fda-roch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/07 16:53:03 by fda-roch          #+#    #+#             */
-/*   Updated: 2026/08/31 12:39:55 by fda-roch         ###   ########.fr       */
+/*   Updated: 2026/08/31 13:31:50 by fda-roch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 class Zombie
 {
 	private:
-		std::string	name; // it says it should be named "name"
+		std::string	name;
 
 	public:
 		Zombie( std::string str );

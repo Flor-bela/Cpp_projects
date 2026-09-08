@@ -4,11 +4,11 @@
 #include "Weapon.hpp"
 #include <string>
 
-class	HumanB // will not always have a weapon
+class	HumanB
 {
 	private:
 		std::string	name;
-		Weapon	*weapon; // pointer? cannot be reference because this one can be NULL
+		Weapon		*weapon;
 
 	public:
 		void	attack( void );
