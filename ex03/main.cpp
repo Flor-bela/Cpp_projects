@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fda-roch <<fda-roch@student.42.fr>         +#+  +:+       +#+        */
+/*   By: fda-roch <fda-roch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/27 19:40:11 by fda-roch          #+#    #+#             */
-/*   Updated: 2026/09/01 16:31:15 by fda-roch         ###   ########.fr       */
+/*   Updated: 2026/09/02 13:17:09 by fda-roch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ int		main( void )
 	Point b(2, 1);
 	Point c(6, -1);
 	Point point(2.5f, 1.5f);
+	//Point point(10, 25);
 
 	std::cout << "a" << a << std::endl;
 	std::cout << "b" << b << std::endl;

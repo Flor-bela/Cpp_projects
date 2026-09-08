@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Point.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fda-roch <<fda-roch@student.42.fr>         +#+  +:+       +#+        */
+/*   By: fda-roch <fda-roch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/27 19:14:50 by fda-roch          #+#    #+#             */
-/*   Updated: 2026/09/01 16:20:05 by fda-roch         ###   ########.fr       */
+/*   Updated: 2026/09/02 13:08:17 by fda-roch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,13 @@
 class Point
 {
 	public:
-		Point( void );										// default constructor
-		Point( float const x_coord, float const y_coord);	// "special" constructor
-		Point( Point const & src );							// copy constructor
-		~Point( void );										// destructor
+		Point( void );
+		Point( float const x_coord, float const y_coord);
+		Point( Point const & src );
+		~Point( void );
 
-		Point& operator=( Point const & src );				// a copy assignment operator overload
-	
+		Point& operator=( Point const & src );
+
 		Fixed	get_x( void ) const;
 		Fixed	get_y( void ) const;
 

@@ -6,7 +6,7 @@
 /*   By: fda-roch <fda-roch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/21 17:35:25 by fda-roch          #+#    #+#             */
-/*   Updated: 2026/08/31 17:01:55 by fda-roch         ###   ########.fr       */
+/*   Updated: 2026/09/02 12:56:19 by fda-roch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,15 @@
 
 const int	Fixed::_fractional_bits = 8;
 
-Fixed::Fixed( void ) : _rawBits(0) // default constructor
+Fixed::Fixed( void ) : _rawBits(0)
 {
 	std::cout << "Default constructor called" << std::endl;
 }
 
-Fixed::Fixed(Fixed const & src) // como es un constructor no tengo que hacer return.
+Fixed::Fixed(Fixed const & src)
 {
-	std::cout << "Copy constructor called" << std::endl; // copiar el valor de src para el que estoy creando
-	// puedo elegir tener un o otro:
-	//this->_fp = src.getRawBits();
-	this->operator=(src); // con esto aquí tengo lo que aparece en el subject (el comentario que dice que esta row may be missing)
+	std::cout << "Copy constructor called" << std::endl; 
+	this->operator=(src);
 }
 
 Fixed::~Fixed( void )
@@ -38,8 +36,7 @@ Fixed & Fixed::operator=(Fixed const & src)
 	std::cout << "Copy assignment operator called" << std::endl;
 	
 	this->_rawBits = src.getRawBits();
-	// tenía solo this->_rawBits = src._rawBits; pero en el subject aquí escribe el output de getRawBits member function called!
-	return *this;// 'this' es el pointer al objecto que está llamando el operador= y como es pointer y tengo que devolver &, para hacerlo tengo de hacer dereferencing(con el *) el pointer y devolver el valor "real", por eso es return *this...(lo unico nuevo)
+	return *this;
 }
 
 int		Fixed::getRawBits( void ) const
