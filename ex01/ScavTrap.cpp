@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fda-roch <<fda-roch@student.42.fr>         +#+  +:+       +#+        */
+/*   By: fda-roch <fda-roch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/03 13:47:32 by fda-roch          #+#    #+#             */
-/*   Updated: 2026/09/03 18:32:03 by fda-roch         ###   ########.fr       */
+/*   Updated: 2026/09/08 13:54:14 by fda-roch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,8 @@ ScavTrap::~ScavTrap( void )
 
 ScavTrap & ScavTrap::operator=( ScavTrap const & src )
 {
-	ClapTrap::operator=(src);	// el return del operador= de ClapTrap se ignora (no lo guardo)
-	return *this;				// y así solo devuelvo el de ScavTrap
+	ClapTrap::operator=(src);
+	return *this;
 }
 
 void	ScavTrap::attack( const std::string & target )

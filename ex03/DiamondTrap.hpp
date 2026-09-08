@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fda-roch <<fda-roch@student.42.fr>         +#+  +:+       +#+        */
+/*   By: fda-roch <fda-roch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/03 20:36:55 by fda-roch          #+#    #+#             */
-/*   Updated: 2026/09/07 16:44:40 by fda-roch         ###   ########.fr       */
+/*   Updated: 2026/09/08 13:54:52 by fda-roch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,11 @@ class DiamondTrap: public ScavTrap, public FragTrap
 
 		DiamondTrap&	operator=( DiamondTrap const & src );
 
-		void	attack( const std::string & target ); // de ScavTrap (tiene que ser)
+		void	attack( const std::string & target );
 		void	whoAmI( void );
 
 	private:
-		std::string		_Name; // same name as ClapTrap one -> shadowing!
+		std::string		_Name;
 };
 
 

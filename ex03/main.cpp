@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fda-roch <<fda-roch@student.42.fr>         +#+  +:+       +#+        */
+/*   By: fda-roch <fda-roch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/03 20:36:35 by fda-roch          #+#    #+#             */
-/*   Updated: 2026/09/07 16:35:24 by fda-roch         ###   ########.fr       */
+/*   Updated: 2026/09/08 13:55:18 by fda-roch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@ int		main( void )
 {
 	DiamondTrap	last;
 	last.whoAmI();
-	/* last.whoAmI();
-	last.attack("Gadget"); // attack es de ClapTrap y de ScavTrap, pero como este lo pongo después, se queda con el de ScavTrap!!!
-	last.ClapTrap::attack("Robot"); // así puedo acceder a ClapTrap? Sí
+
+	last.attack("Gadget");
+	last.ClapTrap::attack("Robot");
 	last.guardGate();
-	last.highFivesGuys(); // para que se vea que puedo acceder a todas las variables aqui que son public de las distintas classes que estoy heredando
-	 */
+	last.highFivesGuys();
+
 	return 0;
 }

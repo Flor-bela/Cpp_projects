@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fda-roch <<fda-roch@student.42.fr>         +#+  +:+       +#+        */
+/*   By: fda-roch <fda-roch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/02 20:09:32 by fda-roch          #+#    #+#             */
-/*   Updated: 2026/09/03 18:31:12 by fda-roch         ###   ########.fr       */
+/*   Updated: 2026/09/08 13:53:42 by fda-roch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class ClapTrap
 		void	takeDamage( unsigned int amount );
 		void	beRepaired( unsigned int amount );
 		
-	protected: // para que ahora ScavTrap puede heredarlas
+	protected:
 		std::string				_Name;
 		unsigned int			_HitPoints;
 		unsigned int			_EnergyPoints;

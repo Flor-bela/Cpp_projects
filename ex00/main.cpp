@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fda-roch <<fda-roch@student.42.fr>         +#+  +:+       +#+        */
+/*   By: fda-roch <fda-roch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/03 11:32:59 by fda-roch          #+#    #+#             */
-/*   Updated: 2026/09/03 13:07:22 by fda-roch         ###   ########.fr       */
+/*   Updated: 2026/09/08 13:59:46 by fda-roch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,20 +15,20 @@
 
 int		main( void )
 {
-	ClapTrap first("Robot");	// starts with 10 EnergyPoints
-	first.attack("Alexa");		// -1 EnergyPoints
+	ClapTrap first("Robot");
+	first.attack("Alexa");
 	first.takeDamage(5);
-	first.beRepaired(5);		// -1 EnergyPoints
+	first.beRepaired(5);
 
 	ClapTrap second;
-	second = first;				// will also be called Robot
+	second = first;
 	for (int i = 0; i < 7; i++)
 	{
-		second.attack("Siri");	// attack damage is 0 so cannot really do any damamge but loses EnergyPoints
+		second.attack("Siri");
 	}
-	second.beRepaired(1);		// the last EnergyPoint used here
+	second.beRepaired(1);
+	second.beRepaired(60);
 	second.takeDamage(50);
-	second.beRepaired(60);		// cannot do this..no energy left
 	
 	return 0;
 }

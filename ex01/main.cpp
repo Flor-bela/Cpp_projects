@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fda-roch <<fda-roch@student.42.fr>         +#+  +:+       +#+        */
+/*   By: fda-roch <fda-roch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/03 13:47:36 by fda-roch          #+#    #+#             */
-/*   Updated: 2026/09/03 20:23:39 by fda-roch         ###   ########.fr       */
+/*   Updated: 2026/09/08 13:54:01 by fda-roch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,16 @@
 
 int		main( void )
 {
-	ClapTrap first("Robot");	// starts with 10 EnergyPoints
-	first.attack("Alexa");		// -1 EnergyPoints
+	ClapTrap first("Robot");
+	first.attack("Alexa");
 	first.takeDamage(5);
-	first.beRepaired(5);		// -1 EnergyPoints
+	first.beRepaired(5);
 
 	ScavTrap	second;
-	second.attack("Alexa");	// is already making damage -> 20!!! In ClapTrap it didn´t do it.
-	second.takeDamage(50);	// from ClapTrap!
-	second.takeDamage(50);	// from ClapTrap!
-	second.beRepaired(5);	// from ClapTrap!
+	second.attack("Alexa");
+	second.takeDamage(50);
+	second.takeDamage(50);
+	second.beRepaired(5);
 	second.guardGate();
 
 	return 0;
