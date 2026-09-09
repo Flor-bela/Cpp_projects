@@ -6,7 +6,7 @@
 /*   By: fda-roch <<fda-roch@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/09 15:52:58 by fda-roch          #+#    #+#             */
-/*   Updated: 2026/09/09 16:11:30 by fda-roch         ###   ########.fr       */
+/*   Updated: 2026/09/10 00:38:22 by fda-roch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ int		main( void )
 
 	std::cout << j->getType() << " " << std::endl;
 	std::cout << i->getType() << " " << std::endl;
-	i->makeSound();  // y eso?? porque no funciona?? verlo mejor
+	std::cout << meta->getType() << " " << std::endl;
+	//i->makeSound();  // y eso?? porque no funciona?? verlo mejor
 	//j->makeSound();
 	//meta->makeSound();
 
