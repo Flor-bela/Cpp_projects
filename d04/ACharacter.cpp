@@ -10,5 +10,5 @@ void	ACharacter::attack( std::string const & target )
 
 void	ACharacter::sayHello( std::string const & target)
 {
-	std::cout << " Hello from ACharacter " << target << std::endl;
+	std::cout << "Hello from ACharacter " << target << std::endl;
 }
