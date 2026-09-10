@@ -4,12 +4,16 @@ SRCS = \
 		Animal.cpp\
 		Dog.cpp\
 		Cat.cpp\
+		WrongAnimal.cpp\
+		WrongCat.cpp\
 		main.cpp
 
 HDRS = \
 		Animal.hpp\
 		Dog.hpp\
-		Cat.hpp
+		Cat.hpp\
+		WrongAnimal.hpp\
+		WrongCat.hpp
 
 OBJS_DIR = objs
 

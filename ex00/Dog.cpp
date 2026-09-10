@@ -6,7 +6,7 @@
 /*   By: fda-roch <<fda-roch@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/09 13:23:34 by fda-roch          #+#    #+#             */
-/*   Updated: 2026/09/09 16:10:20 by fda-roch         ###   ########.fr       */
+/*   Updated: 2026/09/10 14:48:56 by fda-roch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ Dog&	Dog::operator=( Dog const & src )
 	return *this;
 }
 
-void	Dog::makeSound( void )
+void	Dog::makeSound( void ) const
 {
 	std::cout << "Woof Woof" << std::endl;
 }

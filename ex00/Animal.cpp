@@ -6,7 +6,7 @@
 /*   By: fda-roch <<fda-roch@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/09 13:13:10 by fda-roch          #+#    #+#             */
-/*   Updated: 2026/09/09 16:05:44 by fda-roch         ###   ########.fr       */
+/*   Updated: 2026/09/10 18:02:36 by fda-roch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 #include <string>
 #include <iostream>
 
-Animal::Animal( void ) : type("") // leave it empty is is like this?
+Animal::Animal( void ) : type("Animal")
 {
 	std::cout << "Default constructor for Animal called" << std::endl;
 }
 
-Animal::Animal( Animal const & src ) : type( src.type ) // solo así? es lo unico que tengo que copiar....
+Animal::Animal( Animal const & src ) : type( src.type )
 {
 	std::cout << "Copy constructor for Animal called" << std::endl;
 }
@@ -32,16 +32,15 @@ Animal::~Animal( void )
 Animal&	Animal::operator=( Animal const & src )
 {
 	this->type = src.type;
-	return *this;	// devolver el valor del puntero this con *
+	return *this;
 }
 
-std::string	Animal::getType( void ) const // solo así?
+std::string	Animal::getType( void ) const
 {
-	return( this->type );
+	return this->type;
 }
 
-
-void	Animal::makeSound( void )
+void	Animal::makeSound( void ) const
 {
 	std::cout << "Animal Sound" << std::endl; // cambiar esto después a otro mensaje talvez...
 }
