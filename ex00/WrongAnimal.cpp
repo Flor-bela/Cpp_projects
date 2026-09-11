@@ -6,7 +6,7 @@
 /*   By: fda-roch <<fda-roch@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/10 16:15:45 by fda-roch          #+#    #+#             */
-/*   Updated: 2026/09/10 17:52:04 by fda-roch         ###   ########.fr       */
+/*   Updated: 2026/09/10 18:31:26 by fda-roch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,8 @@ WrongAnimal::~WrongAnimal( void )
 
 WrongAnimal&	WrongAnimal::operator=( WrongAnimal const & src )
 {
-	this->type = src.type;
+	if (this != &src)
+		this->type = src.type;
 	return *this;
 }
 

@@ -6,7 +6,7 @@
 /*   By: fda-roch <<fda-roch@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/10 17:26:21 by fda-roch          #+#    #+#             */
-/*   Updated: 2026/09/10 17:51:16 by fda-roch         ###   ########.fr       */
+/*   Updated: 2026/09/10 18:31:49 by fda-roch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,8 @@ WrongCat::~WrongCat( void )
 
 WrongCat& WrongCat::operator=( WrongCat const & src )
 {
-	WrongAnimal::operator=(src);
+	if (this != &src)
+		WrongAnimal::operator=(src);
 	return *this;
 }
 
