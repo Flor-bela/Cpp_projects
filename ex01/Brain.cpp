@@ -6,7 +6,7 @@
 /*   By: fda-roch <<fda-roch@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/10 18:24:18 by fda-roch          #+#    #+#             */
-/*   Updated: 2026/09/10 19:43:26 by fda-roch         ###   ########.fr       */
+/*   Updated: 2026/09/11 16:51:24 by fda-roch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,4 +40,17 @@ Brain&	Brain::operator=( Brain const & src )
 			this->ideas[i] = src.ideas[i]; // esto???
 	}
 	return *this;
+}
+
+std::string	Brain::getIdea( int index ) const
+{
+	if ( index >= 0 && index < 99 )
+		return this->ideas[index];
+	return "Ups, incorrect index, please try again";
+}
+
+void	Brain::setIdea( int index, std::string const & idea )
+{
+	if ( index >= 0 && index <= 99 )
+		this->ideas[index] = idea;
 }

@@ -6,7 +6,7 @@
 /*   By: fda-roch <<fda-roch@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/10 18:12:56 by fda-roch          #+#    #+#             */
-/*   Updated: 2026/09/10 19:49:34 by fda-roch         ###   ########.fr       */
+/*   Updated: 2026/09/11 23:50:33 by fda-roch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,12 @@ class Brain
 
 		Brain&	operator=( Brain const & src );
 
-		std::string	ideas[100]; // con new? o no? y public? o private?
-	
+		std::string	getIdea( int index ) const;
+		void		setIdea( int index, std::string const & idea );
+
+	private:
+		std::string	ideas[100];
+
 };
 
 #endif

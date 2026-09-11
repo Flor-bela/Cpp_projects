@@ -6,7 +6,7 @@
 /*   By: fda-roch <<fda-roch@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/09 15:48:12 by fda-roch          #+#    #+#             */
-/*   Updated: 2026/09/10 19:08:48 by fda-roch         ###   ########.fr       */
+/*   Updated: 2026/09/11 23:11:30 by fda-roch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include "Cat.hpp"
 #include "Brain.hpp"
 #include <iostream>
+#include <string>
 
 Cat::Cat( void ) : Animal()
 {
@@ -22,8 +23,11 @@ Cat::Cat( void ) : Animal()
 	std::cout << "Default constructor for Cat called" << std::endl;
 }
 
-Cat::Cat( Cat const & src ) : Animal( src ), _brain( src._brain ) // ??
+Cat::Cat( Cat const & src ) : Animal( src )
 {
+	this->_brain = new Brain();
+	for (int i = 0; i < 100; i++)
+		this->_brain->setIdea( i, src.getIdea(i));
 	std::cout << "Copy constructor for Cat called" << std::endl;
 }
 
@@ -38,7 +42,8 @@ Cat&	Cat::operator=( Cat const & src )
 	if ( this != &src )
 	{
 		Animal::operator=( src );
-		this->_brain = src._brain; // ??
+		for (int i = 0; i < 100; i++)
+			this->_brain->setIdea( i, src.getIdea(i));
 	}
 	return *this;
 }
@@ -46,4 +51,14 @@ Cat&	Cat::operator=( Cat const & src )
 void	Cat::makeSound( void ) const
 {
 	std::cout << "Meowwww" << std::endl;
+}
+
+std::string	Cat::getIdea( int index ) const
+{
+	return this->_brain->getIdea(index);
+}
+
+void	Cat::setIdea( int index, std::string idea )
+{
+	this->_brain->setIdea( index, idea );
 }
