@@ -6,7 +6,7 @@
 /*   By: fda-roch <<fda-roch@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/09 13:23:36 by fda-roch          #+#    #+#             */
-/*   Updated: 2026/09/11 23:11:18 by fda-roch         ###   ########.fr       */
+/*   Updated: 2026/09/12 18:13:06 by fda-roch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,13 @@ class Dog: public Animal
 		~Dog( void );
 
 		Dog&			operator=( Dog const & src );
-		virtual void	makeSound( void ) const;	// como la tengo que cambiar la tengo que declarar aqui tambien
+		virtual void	makeSound( void ) const;
 
 		std::string		getIdea( int index ) const;
 		void			setIdea( int index, std::string idea );
 
 	private:
-		Brain*	_brain; // el algo privado, no es de herencia
+		Brain*	_brain;
 };
 
 #endif

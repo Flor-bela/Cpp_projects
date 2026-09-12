@@ -6,7 +6,7 @@
 /*   By: fda-roch <<fda-roch@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/10 16:15:47 by fda-roch          #+#    #+#             */
-/*   Updated: 2026/09/10 17:40:40 by fda-roch         ###   ########.fr       */
+/*   Updated: 2026/09/12 18:13:22 by fda-roch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,12 @@ class WrongAnimal
 	public:
 		WrongAnimal( void );
 		WrongAnimal( WrongAnimal const & src );
-		~WrongAnimal( void ); // aquí no tengo que poner virtual porque no tengo nada virtual no??
+		~WrongAnimal( void );
 
 		WrongAnimal& operator=( WrongAnimal const & src );
 		
 		std::string	getType( void ) const;
-		void		makeSound( void ) const; // no lo pongo virtual
+		void		makeSound( void ) const;
 		
 	protected:
 		std::string	type;

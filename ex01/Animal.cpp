@@ -6,7 +6,7 @@
 /*   By: fda-roch <<fda-roch@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/09 13:13:10 by fda-roch          #+#    #+#             */
-/*   Updated: 2026/09/10 18:02:36 by fda-roch         ###   ########.fr       */
+/*   Updated: 2026/09/12 18:12:09 by fda-roch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,4 @@ std::string	Animal::getType( void ) const
 
 void	Animal::makeSound( void ) const
 {
-	std::cout << "Animal Sound" << std::endl; // cambiar esto después a otro mensaje talvez...
-}
+	std::cout << "Animal Sound" << std::endl;

@@ -6,7 +6,7 @@
 /*   By: fda-roch <<fda-roch@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/09 13:23:34 by fda-roch          #+#    #+#             */
-/*   Updated: 2026/09/12 17:30:09 by fda-roch         ###   ########.fr       */
+/*   Updated: 2026/09/12 18:12:50 by fda-roch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 Dog::Dog( void ) : Animal()
 {
 	this->type = "Dog";
-	this->_brain = new Brain(); // ??
+	this->_brain = new Brain();
 	std::cout << "Default constructor for Dog called" << std::endl;
 }
 
@@ -31,7 +31,7 @@ Dog::Dog( Dog const & src ) : Animal( src ) // ??
 
 Dog::~Dog( void )
 {
-	delete this->_brain; // ?? imagino que sí??
+	delete this->_brain;
 	std::cout << "Destructor for Dog called" << std::endl;
 }
 
@@ -52,7 +52,7 @@ void	Dog::makeSound( void ) const
 
 std::string	Dog::getIdea( int index ) const
 {
-	return this->_brain->getIdea( index );  // no hago más ninguna comprobación aquí porque ya la hago en brain....?? dejo asi?
+	return this->_brain->getIdea( index );
 }
 
 void	Dog::setIdea( int index, std::string idea )

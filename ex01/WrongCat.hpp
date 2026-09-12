@@ -6,7 +6,7 @@
 /*   By: fda-roch <<fda-roch@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/10 17:16:48 by fda-roch          #+#    #+#             */
-/*   Updated: 2026/09/10 18:37:54 by fda-roch         ###   ########.fr       */
+/*   Updated: 2026/09/12 18:13:38 by fda-roch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class WrongCat: public WrongAnimal
 		~WrongCat( void );
 		
 		WrongCat&	operator=( WrongCat const & src );
-		void		makeSound( void ) const; // no hacerlo virtual!
+		void		makeSound( void ) const;
 
 };
 

@@ -6,7 +6,7 @@
 /*   By: fda-roch <<fda-roch@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/10 18:24:18 by fda-roch          #+#    #+#             */
-/*   Updated: 2026/09/12 17:20:36 by fda-roch         ###   ########.fr       */
+/*   Updated: 2026/09/12 18:12:14 by fda-roch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ Brain&	Brain::operator=( Brain const & src )
 	if (this != &src)
 	{
 		for (int i = 0; i < 100; i++)
-			this->ideas[i] = src.ideas[i]; // esto???
+			this->ideas[i] = src.ideas[i];
 	}
 	return *this;
 }
