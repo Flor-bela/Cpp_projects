@@ -6,14 +6,14 @@
 /*   By: fda-roch <<fda-roch@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/10 18:24:18 by fda-roch          #+#    #+#             */
-/*   Updated: 2026/09/11 16:51:24 by fda-roch         ###   ########.fr       */
+/*   Updated: 2026/09/12 17:20:36 by fda-roch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Brain.hpp"
 #include <iostream>
 
-Brain::Brain( void ) // que hago con ideas??? hago new ideas aqui??? hmm creo que no
+Brain::Brain( void )
 {
 	std::cout << "Default contructor for Brain called" << std::endl;
 }
@@ -44,7 +44,7 @@ Brain&	Brain::operator=( Brain const & src )
 
 std::string	Brain::getIdea( int index ) const
 {
-	if ( index >= 0 && index < 99 )
+	if ( index >= 0 && index <= 99 )
 		return this->ideas[index];
 	return "Ups, incorrect index, please try again";
 }

@@ -6,7 +6,7 @@
 /*   By: fda-roch <<fda-roch@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/09 15:48:12 by fda-roch          #+#    #+#             */
-/*   Updated: 2026/09/12 16:41:18 by fda-roch         ###   ########.fr       */
+/*   Updated: 2026/09/12 18:10:00 by fda-roch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,7 @@ Cat::Cat( void ) : Animal()
 
 Cat::Cat( Cat const & src ) : Animal( src )
 {
-	this->_brain = new Brain();
-	for (int i = 0; i < 100; i++)
-		this->_brain->setIdea( i, src.getIdea(i));
+	this->_brain = new Brain(*src._brain);
 	std::cout << "Copy constructor for Cat called" << std::endl;
 }
 
@@ -42,8 +40,7 @@ Cat&	Cat::operator=( Cat const & src )
 	if ( this != &src )
 	{
 		Animal::operator=( src );
-		for (int i = 0; i < 100; i++)
-			this->_brain->setIdea( i, src.getIdea(i));
+		*this->_brain = *src._brain; // operator = from Brain!
 	}
 	return *this;
 }

@@ -6,7 +6,7 @@
 /*   By: fda-roch <<fda-roch@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/09 13:23:34 by fda-roch          #+#    #+#             */
-/*   Updated: 2026/09/11 23:09:22 by fda-roch         ###   ########.fr       */
+/*   Updated: 2026/09/12 17:30:09 by fda-roch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,7 @@ Dog::Dog( void ) : Animal()
 
 Dog::Dog( Dog const & src ) : Animal( src ) // ??
 {
-	this->_brain = new Brain();
-	for (int i = 0; i < 100; i++)
-		this->_brain->setIdea(i, src.getIdea(i));
+	this->_brain = new Brain(*(src._brain)); // así uso la copia constructor de Brain!
 	std::cout << "Copy constructor for Dog called" << std::endl;
 }
 
@@ -37,13 +35,12 @@ Dog::~Dog( void )
 	std::cout << "Destructor for Dog called" << std::endl;
 }
 
-Dog&	Dog::operator=( Dog const & src ) // CHANGE THIS!!!!
+Dog&	Dog::operator=( Dog const & src )
 {
 	if ( this != &src )
 	{
 		Animal::operator=( src ); // usa el operator= de Animal aprovechando codigo
-		for(int i = 0; i < 100; i++)
-			this->_brain->setIdea(i, src.getIdea(i));
+		*(this->_brain) = *(src._brain);  // así uso el operator = de Brain!!!
 	}
 	return *this;
 }

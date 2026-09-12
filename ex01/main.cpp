@@ -6,7 +6,7 @@
 /*   By: fda-roch <<fda-roch@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/10 19:00:46 by fda-roch          #+#    #+#             */
-/*   Updated: 2026/09/12 17:13:42 by fda-roch         ###   ########.fr       */
+/*   Updated: 2026/09/12 17:16:21 by fda-roch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,17 @@
 
 int		main( void )
 {
-	Animal*	animal = new Animal();
+	const Animal*	animal = new Animal();
 	std::cout << animal->getType() << std::endl;
 	animal->makeSound();
 	delete animal;
 
-	Animal*	puppy = new Dog();
+	const Animal*	puppy = new Dog();
 	std::cout << puppy->getType() << std::endl;
 	puppy->makeSound();
 	delete puppy;
 
-	Animal*	kitty = new Cat();
+	const Animal*	kitty = new Cat();
 	std::cout << kitty->getType() << std::endl;
 	kitty->makeSound();
 	delete kitty;
