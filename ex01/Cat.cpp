@@ -6,7 +6,7 @@
 /*   By: fda-roch <<fda-roch@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/09 15:48:12 by fda-roch          #+#    #+#             */
-/*   Updated: 2026/09/11 23:11:30 by fda-roch         ###   ########.fr       */
+/*   Updated: 2026/09/12 16:41:18 by fda-roch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ Cat::Cat( Cat const & src ) : Animal( src )
 
 Cat::~Cat( void )
 {
-	delete _brain;
+	delete this->_brain;
 	std::cout << "Destructor for Cat called" << std::endl;
 }
 
