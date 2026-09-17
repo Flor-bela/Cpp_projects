@@ -1,4 +1,4 @@
-NAME = ex03
+NAME = a.out
 
 SRCS = \
 		AMateria.cpp\

@@ -6,7 +6,7 @@
 /*   By: fda-roch <<fda-roch@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/12 23:11:07 by fda-roch          #+#    #+#             */
-/*   Updated: 2026/09/16 17:14:29 by fda-roch         ###   ########.fr       */
+/*   Updated: 2026/09/17 18:02:56 by fda-roch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,7 @@ class ICharacter;
 class AMateria
 {
 	protected:
-		//(...) falta algo aquí!
-		std::string	_type; // ?? _type = default?
+		std::string	_type;
 
 	public:
 		AMateria( void );												// default constructor
@@ -31,7 +30,7 @@ class AMateria
 		virtual ~AMateria( void );												// destructor , creo que tiene que ser virtual
 		
 		AMateria&	operator=( AMateria const & src );					//operator=
-		//(....) something more?
+
 
 		std::string const & getType ( void ) const; // Returns the materia type, ice, cure???
 
@@ -39,7 +38,5 @@ class AMateria
 		virtual void		use( ICharacter& target ); // ICharacter is an interface!
 
 };
-
-//std::ostream&	operator<<( std::ostream out, ICharacter& target ); // quizás no necesito esto
 
 #endif

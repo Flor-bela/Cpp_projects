@@ -6,29 +6,27 @@
 /*   By: fda-roch <<fda-roch@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/14 16:44:24 by fda-roch          #+#    #+#             */
-/*   Updated: 2026/09/16 18:50:03 by fda-roch         ###   ########.fr       */
+/*   Updated: 2026/09/17 19:55:22 by fda-roch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AMateria.hpp"
 #include "Ice.hpp"
+#include "AMateria.hpp"
+#include "ICharacter.hpp"
 #include <iostream>
 
-Ice::Ice( void ) : AMateria( ) // pongo esto aqui igualmente??
+Ice::Ice( void ) : AMateria( "ice" ) // pongo esto aqui igualmente aunque sea abstracta la clase?? Sí!!!
 {
-	this->_type = "ice";
 	std::cout << "Default constructor for Ice called" << std::endl;
 }
 
-Ice::Ice( Ice const & src ) : AMateria( ) 
+Ice::Ice( Ice const & src ) : AMateria( src )
 {
-	(void) src; // tengo algo para copiar?? no creo
 	std::cout << "Copy constructor for Ice called" << std::endl;
 }
 
 Ice::~Ice( void )
 {
-	//delete ptrIce; //??
 	std::cout << "Destructor for Ice called" << std::endl;
 }
 
@@ -39,12 +37,12 @@ Ice& Ice::operator=( Ice const & src )
 }
 
 AMateria*	Ice::clone( void ) const
-{
-	AMateria*	ptrIce = new Ice(); // este si lo devuelvo lo tengo que eliminar aqui? creo que no
+{// tengo que usar un clone real del objeto actual!!! por eso uso *this!
+	AMateria*	ptrIce = new Ice(*this);
 	return ptrIce;
 }
 
 void	Ice::use( ICharacter& target )
 {
-	std::cout << "* shoots and ice bolt at " << target.getName() << " *" <<std::endl;
+	std::cout << "* shoots an ice bolt at " << target.getName() << " *" <<std::endl;
 }

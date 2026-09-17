@@ -6,14 +6,14 @@
 /*   By: fda-roch <<fda-roch@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/13 13:59:03 by fda-roch          #+#    #+#             */
-/*   Updated: 2026/09/16 17:14:47 by fda-roch         ###   ########.fr       */
+/*   Updated: 2026/09/17 19:53:22 by fda-roch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ICHARACTER_HPP
 # define ICHARACTER_HPP
 
-// he quitado el include AMateria.hpp
+// he quitado el include AMateria.hpp -> para no crear una inclusion circular!!!
 #include <string>
 
 class AMateria; // Forward declaration??

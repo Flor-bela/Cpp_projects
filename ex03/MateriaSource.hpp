@@ -6,7 +6,7 @@
 /*   By: fda-roch <<fda-roch@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/16 11:31:36 by fda-roch          #+#    #+#             */
-/*   Updated: 2026/09/16 17:33:37 by fda-roch         ###   ########.fr       */
+/*   Updated: 2026/09/17 19:28:08 by fda-roch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include "IMateriaSource.hpp"
 # include <string>
 
-class AMateria;
+class AMateria; // forward declaration
 
 class MateriaSource : public IMateriaSource
 {
@@ -34,6 +34,5 @@ class MateriaSource : public IMateriaSource
 		AMateria*	_inventory[4]; // hice esto pero ... AMateria no puede ser instanciada... es abstracta, pero sí que puedo crear punteros a una clase abstracta
 
 };
-
 
 #endif

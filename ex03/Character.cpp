@@ -6,7 +6,7 @@
 /*   By: fda-roch <<fda-roch@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/15 17:40:40 by fda-roch          #+#    #+#             */
-/*   Updated: 2026/09/16 20:05:25 by fda-roch         ###   ########.fr       */
+/*   Updated: 2026/09/17 18:34:09 by fda-roch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,19 @@ Character::Character( std::string const & name ) : _name( name )
 	std::cout << "Parameterized contructor for Character called" << std::endl;
 }
 
-Character::Character( Character const & src )
+// en esta copia el Character acaba de nascer!!!
+Character::Character( Character const & src ) // During copy, the Materias of a Character must be deleted before the new ones are added
+//to their inventory
 {
 	this->_name = src._name;
-	for (int i = 0; i < 4; i++)
+	int i = 0;
+
+	while (i < 4)
 	{
-		this->_inventory[i] = src._inventory[i]; // solo esto?? dice que tienen que ser deep copies...
+		this->_inventory[i] = NULL;
+		if (src._inventory[i])
+			this->_inventory[i] = src._inventory[i]->clone(); // deep copy
+		i++;
 	}
 	std::cout << "Copy contructor for Character called" << std::endl;
 }
@@ -49,12 +56,23 @@ Character::~Character( void )
 	std::cout << "Destructor for Character called" << std::endl;
 }
 
-Character&	Character::operator=( Character const & src )
+Character&	Character::operator=( Character const & src ) // aquí si es copia de una character ya existente...osea tendrá cosas dentro o no... por eso necesito hacer delete primero para asegurarme si tienen algo, que lo borro bien
 {
+	if (this == &src)
+		return *this; // importante porque si no borraria su inventario y despues ya no tendría nada para copiar!
 	this->_name = src._name;
-	for (int i = 0; i < 4; i++)
+	int i = 0;
+
+	while (i < 4)
 	{
-		this->_inventory[i] = src._inventory[i]; // solo esto?? dice que tienen que ser deep copies...
+		if (this->_inventory[i])
+		{
+			delete this->_inventory[i]; // primero delete si tiene algo
+			this->_inventory[i] = NULL; // decir null
+		}
+		if (src._inventory[i])
+			this->_inventory[i] = src._inventory[i]->clone(); //para ser deep copy
+		i++;
 	}
 	return *this;
 }
@@ -70,23 +88,21 @@ void	Character::equip( AMateria* m )
 	
 	while ( i < 4 )
 	{
-		if( this->_inventory[i] ) // if it exists
-			i++;
-		else
+		if ( !this->_inventory[i] ) // if it doesn´t exist
 		{
-			this->_inventory[i] = m; // hmmm creo que lo tengo que hacer new....quizás no porque es un pointer!
+			this->_inventory[i] = m; // si hiciera clone, después tenía problemas cuando hago unequip!
 			break;
 		}
+		i++;
 	}
 }
 
-void	Character::unequip( int idx ) // hmm creo que no debería hacer delete aquí....
+void	Character::unequip( int idx ) // subject says we cannot delete it
 {
-	//delete them directly??? //subject says: save the addresses before calling unequip() or anything else...
 	if (idx >= 0 && idx <= 3)
 	{
-		if( this->_inventory[idx] ) // si existe.... dejo así por ahora y después veo en el main....
-			delete this->_inventory[idx]; // es verdad que así pierdo la Materia...
+		if( this->_inventory[idx] )
+			this->_inventory[idx] = NULL;
 	}
 }
 
@@ -95,6 +111,6 @@ void	Character::use( int idx, ICharacter& target )
 	if (idx >= 0 && idx <= 3)
 	{
 		if ( this->_inventory[idx] )
-			_inventory[idx]->use( target ); // usar el use de Materia directamente
+			this->_inventory[idx]->use( target ); // usar el use de Materia directamente
 	}
 }
