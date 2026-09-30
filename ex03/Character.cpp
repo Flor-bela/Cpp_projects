@@ -6,7 +6,7 @@
 /*   By: fda-roch <<fda-roch@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/15 17:40:40 by fda-roch          #+#    #+#             */
-/*   Updated: 2026/09/17 18:34:09 by fda-roch         ###   ########.fr       */
+/*   Updated: 2026/09/30 23:47:07 by fda-roch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,8 @@ std::string const &	Character::getName() const
 void	Character::equip( AMateria* m )
 {
 	int	i = 0;
+	if (!m) // si no existe -> o sea es NULL no hace nada
+		return ;
 	
 	while ( i < 4 )
 	{
@@ -97,7 +99,7 @@ void	Character::equip( AMateria* m )
 	}
 }
 
-void	Character::unequip( int idx ) // subject says we cannot delete it
+void	Character::unequip( int idx ) // subject says we cannot delete it -> sin embargo si hago unequip en main necesito guardar el puntero antes para hacerle free !!!
 {
 	if (idx >= 0 && idx <= 3)
 	{
